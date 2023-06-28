@@ -8,10 +8,12 @@ public class PhoneGameController : MonoBehaviour
 {
 
     [SerializeField] TMP_Text numberDislay;
+    [SerializeField] TMP_Text commandText;
     string enteredNumbers;
     float allowedTime = 5.0f;
     float timeRemaining;
     [SerializeField] Image timerBar;
+
     // Start is called before the first frame update
     void Start()
     {
