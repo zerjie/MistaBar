@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2159364905140907764}
   - component: {fileID: 7741620101026964313}
   - component: {fileID: 7915673752266063230}
+  - component: {fileID: -1887573231295223284}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -164,3 +165,15 @@ PolygonCollider2D:
       - {x: 0.5, y: -0.5}
       - {x: 0.5, y: 0.5}
   m_UseDelaunayMesh: 0
+--- !u!114 &-1887573231295223284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8574453182211803585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ededf676259b4534f9840958167df024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

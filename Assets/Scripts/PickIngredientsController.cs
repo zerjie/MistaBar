@@ -6,34 +6,30 @@ using TMPro;
 
 public class PickIngredientsController : MonoBehaviour
 {
-    float allowedTime = 5.0f;
-    float timeRemaining;
-    [SerializeField] Image timerBar;
     [SerializeField] Transform[] spawnPoints;
     [SerializeField] GameObject[] clickableObjects;
+    string tagToCount = "RightObject";
+    public List<GameObject> spawnedObjects;
+    public GameObject spawnedObject;
     public int pointCount;
+    public int rightObjects;
 
     // Start is called before the first frame update
     void Start()
     {
-        timeRemaining = allowedTime;
-
+        rightObjects = 0;
+        pointCount = 0;
         InstantiateGameObjects();
+        CountRightObjects();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        FillTimer();
-        if (timeRemaining <= 0)
+        if (pointCount == rightObjects)
         {
-            Debug.Log(" Ran out of Time!");
-        }
-
-        if (pointCount == 3)
-        {
-            Debug.Log("You win!");
+            Debug.Log("You Win!");
         }
     }
 
@@ -42,15 +38,38 @@ public class PickIngredientsController : MonoBehaviour
         for (int i = 0; i < spawnPoints.Length; i++)
         {
             GameObject randomObjectPrefab = clickableObjects[Random.Range(0, clickableObjects.Length)];
-            Instantiate(randomObjectPrefab, spawnPoints[i].position, Quaternion.identity);
-        }
+            spawnedObject = Instantiate(randomObjectPrefab, spawnPoints[i].position, Quaternion.identity);
+            spawnedObjects.Add(spawnedObject);
+        } 
     }
 
-    void FillTimer()
+    
+
+    public void RightObjectClicked( )
     {
-        timeRemaining -= Time.deltaTime;
-        float timerFill = timeRemaining / allowedTime;
-        timerBar.fillAmount = timerFill;
+        pointCount++;
+        Debug.Log("Clicked object: " );
+    }
+
+    public void WrongObjectClicked()
+    {
+        Debug.Log("Wrong object clicked ");
+    }
+
+
+    private void CountRightObjects()
+    {
+
+
+        foreach (GameObject obj in spawnedObjects)
+        {
+            if (obj.CompareTag(tagToCount))
+            {
+                rightObjects++;
+            }
+        }
+
+        Debug.Log("Number of objects with tag '" + tagToCount + "': " + rightObjects);
     }
 
 }
