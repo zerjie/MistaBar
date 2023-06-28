@@ -718,5 +718,6 @@ MonoBehaviour:
   - {fileID: 250909207296711035, guid: 74b5585e1048c7b4baa3743ba3e09f46, type: 3}
   spawnedObjects: []
   spawnedObject: {fileID: 0}
+  rightObject: {fileID: 7830686284051357682, guid: 4da06f37d586cbf40bb224cbb70b6fd1, type: 3}
   pointCount: 0
   rightObjects: 0
