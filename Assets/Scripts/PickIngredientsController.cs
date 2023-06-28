@@ -9,8 +9,8 @@ public class PickIngredientsController : MonoBehaviour
     float allowedTime = 5.0f;
     float timeRemaining;
     [SerializeField] Image timerBar;
-   // [SerializeField] GameObject[] spawnpoints;
-    //[SerializeField] GameObject[] clickableObjects;
+    [SerializeField] Transform[] spawnPoints;
+    [SerializeField] GameObject[] clickableObjects;
     public int pointCount;
 
     // Start is called before the first frame update
@@ -18,7 +18,7 @@ public class PickIngredientsController : MonoBehaviour
     {
         timeRemaining = allowedTime;
 
-       // Instantiate(clickableObjects[Random.Range(1,5)], spawnpoints[1].transform);
+        InstantiateGameObjects();
     }
 
     // Update is called once per frame
@@ -37,6 +37,14 @@ public class PickIngredientsController : MonoBehaviour
         }
     }
 
+    void InstantiateGameObjects()
+    {
+        for (int i = 0; i < spawnPoints.Length; i++)
+        {
+            GameObject randomObjectPrefab = clickableObjects[Random.Range(0, clickableObjects.Length)];
+            Instantiate(randomObjectPrefab, spawnPoints[i].position, Quaternion.identity);
+        }
+    }
 
     void FillTimer()
     {

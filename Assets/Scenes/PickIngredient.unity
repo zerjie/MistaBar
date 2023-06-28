@@ -308,6 +308,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerBar: {fileID: 1201973450}
+  spawnPoints:
+  - {fileID: 979950564}
+  - {fileID: 531059993}
+  - {fileID: 1951758317}
+  - {fileID: 2023547619}
+  clickableObjects:
+  - {fileID: 7830686284051357682, guid: 4da06f37d586cbf40bb224cbb70b6fd1, type: 3}
+  - {fileID: 5183091260974479352, guid: 329b27ba16d12414e9cda03e7ffb9989, type: 3}
+  - {fileID: 8574453182211803585, guid: 817df584dd4ff0c4595cd036e13cc4ac, type: 3}
+  - {fileID: 250909207296711035, guid: 74b5585e1048c7b4baa3743ba3e09f46, type: 3}
   pointCount: 0
 --- !u!1 &979950563
 GameObject:
@@ -555,8 +565,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 40.2, y: 260.1}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 74.906235, y: 266.69418}
+  m_SizeDelta: {x: 269.4125, y: 36.8116}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1903090254
 CanvasRenderer:
@@ -586,7 +596,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Garnish!
+  m_text: Pick ingredients
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
