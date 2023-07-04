@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class PickIngredientsController : MonoBehaviour
+public class RightObjectController : MonoBehaviour
 {
     [SerializeField] Transform[] spawnPoints;
     [SerializeField] GameObject[] clickableObjects;

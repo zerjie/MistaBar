@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class RightObjectClick : MonoBehaviour
 {
-    private PickIngredientsController controller;
+    private RightObjectController controller;
 
 
     public void Start()
     {
-        controller = FindObjectOfType<PickIngredientsController>();
+        controller = FindObjectOfType<RightObjectController>();
     }
 
     private void OnMouseDown()

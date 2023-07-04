@@ -10,14 +10,13 @@ public class PhoneGameController : MonoBehaviour
     [SerializeField] TMP_Text numberDislay;
     [SerializeField] TMP_Text commandText;
     string enteredNumbers;
-    float allowedTime = 5.0f;
-    float timeRemaining;
-    [SerializeField] Image timerBar;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
-        timeRemaining = allowedTime;
+
     }
 
     // Update is called once per frame
@@ -29,20 +28,11 @@ public class PhoneGameController : MonoBehaviour
             Debug.Log("Help arriving");
         }
 
-        FillTimer();
-        if (timeRemaining <= 0)
-        {
-            Debug.Log(" Ran out of Time!");
-        }
+
     }
 
 
-    void FillTimer()
-    {
-        timeRemaining -= Time.deltaTime;
-        float timerFill = timeRemaining / allowedTime;
-        timerBar.fillAmount = timerFill;
-    }
+
     public void Add1()
     {
         enteredNumbers += "1";
