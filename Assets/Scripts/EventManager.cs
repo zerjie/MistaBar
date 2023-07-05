@@ -17,8 +17,6 @@ namespace Example
             {
                 instance = this;
             }
-
-            PlayerGameScript ps;
         }
 
         public event Action<string> OnUpdateUI; //Output, attach an String to the action
