@@ -102,8 +102,8 @@ MonoBehaviour:
   minSpeed: 1
   maxSpeed: 7
   moveSpeed: 0
-  finalScale: 2
-  initialScale: 0.25
+  finalScale: 2.5
+  initialScale: 0.15
   maxHeight: 10
 --- !u!50 &8213456839639921073
 Rigidbody2D:
