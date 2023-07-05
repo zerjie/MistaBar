@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class DodgersMovement : MonoBehaviour
 {
     [Header("Player Settings")]
     [SerializeField] private float moveSpeed = 5f;

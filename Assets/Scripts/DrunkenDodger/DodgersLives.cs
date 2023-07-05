@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerLives : MonoBehaviour
+public class DodgersLives : MonoBehaviour
 {
     public int maxLives = 5;
     public GameObject gameOverScreen;
@@ -38,8 +38,8 @@ public class PlayerLives : MonoBehaviour
         gameOverScreen.SetActive(true);
         Debug.Log("Game Over");     
         isGameOver = true;
-        ObjectSpawner objectSpawner = FindObjectOfType<ObjectSpawner>();
-        objectSpawner.SetGameOver(true);
+        DrunkardSpawner drunkardSpawner = FindObjectOfType<DrunkardSpawner>();
+        drunkardSpawner.SetGameOver(true);
     }
 
     void Respawn()
