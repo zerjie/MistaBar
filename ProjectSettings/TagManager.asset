@@ -4,6 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - RightObject
   - Obstacle
   layers:
   - Default
