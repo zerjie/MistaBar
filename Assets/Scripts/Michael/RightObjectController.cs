@@ -35,7 +35,7 @@ public class RightObjectController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pointCount == rightObjects)
+        if (pointCount == rightObjects && rightObjects != 0)
         {
             Debug.Log("You Win!");
         }

@@ -10,6 +10,9 @@ public class Timer : MonoBehaviour
     float timeRemaining;
     bool gameStarted;
     [SerializeField] Image timerBar;
+    public Image managerSprite;
+    public Sprite angrySprite;
+    public GameObject manager;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +33,12 @@ public class Timer : MonoBehaviour
         {
             FillTimer();
         }
-        
+
+        if (timeRemaining < 2.5)
+        {
+            managerSprite = manager.GetComponent<Image>();
+            managerSprite.sprite = angrySprite;
+        }
 
         if (timeRemaining <= 0)
         {

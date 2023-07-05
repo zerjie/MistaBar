@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class ChangeSpriteOnClick : MonoBehaviour
 {
-    public Sprite newSprite;
+    public GameObject garnish;
+    public Sprite[] newSprites;
 
     private SpriteRenderer spriteRenderer;
 
 
+
+
     private void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = garnish.GetComponent<SpriteRenderer>();
     }
 
     private void OnMouseDown()
@@ -20,7 +23,7 @@ public class ChangeSpriteOnClick : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             // Change the sprite to the new sprite
-            spriteRenderer.sprite = newSprite;
+            spriteRenderer.sprite = newSprites[Random.Range(0,3)];
         }
     }
 }
