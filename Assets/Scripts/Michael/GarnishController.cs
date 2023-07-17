@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GarnishController : MonoBehaviour
 {
@@ -37,12 +38,16 @@ public class GarnishController : MonoBehaviour
     {
         if (pointCount == rightObjects && rightObjects != 0)
         {
-            Debug.Log("You Win!");
+            GameEvents.current.PlayerWin();
+            GameEvents.current.CloseGame();
+
         }
     }
 
     void InstantiateGameObjects()
     {
+        Scene gameScene = SceneManager.GetSceneByName("Garnish");
+
         for (int i = 0; i < spawnPoints.Length; i++)
         {
             // Skip the correct object spawn index
@@ -55,12 +60,17 @@ public class GarnishController : MonoBehaviour
             // Instantiate the random object at the spawn point
             GameObject spawnedObject = Instantiate(randomObjectPrefab, spawnPoints[i].position, Quaternion.identity);
 
+            // Set the object's scene explicitly
+            SceneManager.MoveGameObjectToScene(spawnedObject, gameScene);
+
 
             spawnedObjects[i] = spawnedObject;
         }
 
-        // Spawn the correct object at the reserved spawn point
-        spawnedObjects[correctSpawnIndex] = Instantiate(rightObject, spawnPoints[correctSpawnIndex].position, Quaternion.identity);
+        // Instantiate and set the scene for the correct object at the reserved spawn point
+        GameObject correctObject = Instantiate(rightObject, spawnPoints[correctSpawnIndex].position, Quaternion.identity);
+        SceneManager.MoveGameObjectToScene(correctObject, gameScene);
+        spawnedObjects[correctSpawnIndex] = correctObject;
     }
 
     

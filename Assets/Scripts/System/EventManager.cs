@@ -18,17 +18,17 @@ public class EventManager : MonoBehaviour
 
     private void OnPlayerWin()
     {
-        Debug.Log("player win");
+        Debug.Log("player won!");
     }
 
     private void OnPlayerLoss()
     {
-        Debug.Log("player lose");
+        Debug.Log("player lost!");
     }
 
     private void OnTimeOut()
     {
-        Debug.Log("Time Out");
+        Debug.Log("Time ran out!");
 
     }
 

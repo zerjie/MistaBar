@@ -8,9 +8,9 @@ public class Timer : MonoBehaviour
 {
     float allowedTime = 5.0f;
     public float timeRemaining;
-    bool gameStarted;
     [SerializeField] Image timerBar;
     public Image managerSprite;
+    public Sprite happySprite;
     public Sprite angrySprite;
     public GameObject manager;
 
@@ -18,34 +18,24 @@ public class Timer : MonoBehaviour
     void Start()
     {
         timeRemaining = allowedTime;
-        gameStarted = false;
+        managerSprite = manager.GetComponent<Image>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            gameStarted = true;
-        }
-        
-        if (gameStarted)
-        {
-            FillTimer();
-        }
+        FillTimer();
 
         if (timeRemaining < 2.5)
         {
-            managerSprite = manager.GetComponent<Image>();
+            
             managerSprite.sprite = angrySprite;
         }
 
         if (timeRemaining <= 0)
         {
-            Debug.Log(" Ran out of Time!");
             GameEvents.current.TimeOut();
             GameEvents.current.CloseGame();
-            gameStarted = false;
         }
     }
 
@@ -54,5 +44,10 @@ public class Timer : MonoBehaviour
         timeRemaining -= Time.deltaTime;
         float timerFill = timeRemaining / allowedTime;
         timerBar.fillAmount = timerFill;
+    }
+
+    public void HappyManager()
+    {
+        managerSprite.sprite = angrySprite;
     }
 }
