@@ -8,7 +8,7 @@ public class DodgersLives : MonoBehaviour
     public GameObject gameOverScreen;
 
     private int currentLives;
-    private bool isGameOver = false;
+    //private bool isGameOver = false;
 
     void Start()
     {
@@ -37,7 +37,7 @@ public class DodgersLives : MonoBehaviour
     {
         gameOverScreen.SetActive(true);
         Debug.Log("Game Over");     
-        isGameOver = true;
+        //isGameOver = true;
         DrunkardSpawner drunkardSpawner = FindObjectOfType<DrunkardSpawner>();
         drunkardSpawner.SetGameOver(true);
     }

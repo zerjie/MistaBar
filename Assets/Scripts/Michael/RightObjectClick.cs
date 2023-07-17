@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class RightObjectClick : MonoBehaviour
 {
-    private RightObjectController controller;
-
+    private GarnishController controller;
+    private bool beenClicked = false;
 
     public void Start()
     {
-        controller = FindObjectOfType<RightObjectController>();
+        controller = FindObjectOfType<GarnishController>();
     }
 
     private void OnMouseDown()
     {
-        controller.RightObjectClicked();
+        if (!beenClicked)
+        {
+            controller.RightObjectClicked();
+        }
+        beenClicked= true;
         Debug.Log("Obj clicked");
     }
 }

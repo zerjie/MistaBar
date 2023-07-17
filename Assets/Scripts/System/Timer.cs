@@ -7,7 +7,7 @@ using TMPro;
 public class Timer : MonoBehaviour
 {
     float allowedTime = 5.0f;
-    float timeRemaining;
+    public float timeRemaining;
     bool gameStarted;
     [SerializeField] Image timerBar;
     public Image managerSprite;
@@ -43,6 +43,8 @@ public class Timer : MonoBehaviour
         if (timeRemaining <= 0)
         {
             Debug.Log(" Ran out of Time!");
+            GameEvents.current.TimeOut();
+            GameEvents.current.CloseGame();
             gameStarted = false;
         }
     }

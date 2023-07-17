@@ -2,16 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChangeSpriteOnClick : MonoBehaviour
+public class Garnish : MonoBehaviour
 {
     public GameObject garnish;
     public Sprite[] newSprites;
-
+    private bool beenClicked = false;
     private SpriteRenderer spriteRenderer;
-
-
-
-
     private void Awake()
     {
         spriteRenderer = garnish.GetComponent<SpriteRenderer>();
@@ -19,11 +15,10 @@ public class ChangeSpriteOnClick : MonoBehaviour
 
     private void OnMouseDown()
     {
-        // Check if the mouse click occurred on this game object
-        if (Input.GetMouseButtonDown(0))
+        if (!beenClicked)
         {
-            // Change the sprite to the new sprite
-            spriteRenderer.sprite = newSprites[Random.Range(0,3)];
+            spriteRenderer.sprite = newSprites[Random.Range(0, 3)];
         }
+        beenClicked = true;
     }
 }

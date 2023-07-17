@@ -177,3 +177,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ededf676259b4534f9840958167df024, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  beenClicked: 0
+  garnish: {fileID: 791884194307863000, guid: c0583b4e855c74b8c82e7b9b5efb5ce9, type: 3}
+  newSprites: []

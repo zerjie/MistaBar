@@ -10,7 +10,7 @@ public class UIScript : MonoBehaviour
 
     public void Awake()
     {
-        EventManager.instance.OnUpdateUI += UpdateUI;
+        //EventManager.instance.OnUpdateUI += UpdateUI;
     }
 
     public void UpdateUI(string text)
