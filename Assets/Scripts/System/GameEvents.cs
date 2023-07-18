@@ -43,15 +43,6 @@ public class GameEvents : MonoBehaviour
         }
     }
 
-    public event Action onOpenGame;
-    public void OpenGame()
-    {
-        if (onOpenGame != null)
-        {
-            onOpenGame();
-        }
-    }
-
     public event Action onCloseGame;
     public void CloseGame()
     {

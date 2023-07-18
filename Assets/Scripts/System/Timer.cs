@@ -48,6 +48,6 @@ public class Timer : MonoBehaviour
 
     public void HappyManager()
     {
-        managerSprite.sprite = happySprite;
+        managerSprite.sprite = angrySprite;
     }
 }

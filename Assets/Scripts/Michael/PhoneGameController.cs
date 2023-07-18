@@ -10,27 +10,25 @@ public class PhoneGameController : MonoBehaviour
     [SerializeField] TMP_Text numberDislay;
     [SerializeField] TMP_Text commandText;
     string enteredNumbers;
-    bool closedGame = false;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        closedGame = false;
+
     }
 
     // Update is called once per frame
     void Update()
     {
         numberDislay.text = enteredNumbers;
-        if (enteredNumbers == "911" && closedGame == false)
+        if (enteredNumbers == "911")
         {
             Debug.Log("Help arriving");
             GameEvents.current.PlayerWin();
             GameEvents.current.CloseGame();
             Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-            closedGame = true;
         }
 
 

@@ -9,6 +9,7 @@ public class MicroGameManager : MonoBehaviour
 
     public int selectedIndex;
     public int selectedMicroGame;
+    public Timer timer;
 
     private static MicroGameManager instance;
 
@@ -37,7 +38,8 @@ public class MicroGameManager : MonoBehaviour
         selectedIndex = Random.Range(0, microGameList.Count);
         selectedMicroGame = microGameList[selectedIndex];
         OpenMicroGame(selectedMicroGame);
-        GameEvents.current.OpenGame();
+        timer.timeRemaining = 5f;
+        timer.HappyManager();
     }
     public void OpenMicroGame(int microGameIndex)
     {
