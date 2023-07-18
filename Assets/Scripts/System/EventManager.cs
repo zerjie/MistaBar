@@ -15,7 +15,6 @@ public class EventManager : MonoBehaviour
         GameEvents.current.onPlayerWin += OnPlayerWin;
         GameEvents.current.onPlayerLose += OnPlayerLoss;
         GameEvents.current.onTimeOut += OnTimeOut;
-        GameEvents.current.onOpenGame += OnOpenGame;
         GameEvents.current.onCloseGame += OnCloseGame;
         GameEvents.current.onTransition += OnTransition;
     }
