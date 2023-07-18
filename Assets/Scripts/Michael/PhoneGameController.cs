@@ -26,6 +26,9 @@ public class PhoneGameController : MonoBehaviour
         if (enteredNumbers == "911")
         {
             Debug.Log("Help arriving");
+            GameEvents.current.PlayerWin();
+            GameEvents.current.CloseGame();
+            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
         }
 
 
@@ -41,46 +44,61 @@ public class PhoneGameController : MonoBehaviour
     public void Add2()
     {
         enteredNumbers += "2";
+        PlayerLose();
         Debug.Log("Wrong Number!");
     }
 
     public void Add3()
     {
         enteredNumbers += "3";
+        PlayerLose();
         Debug.Log("Wrong Number!");
     }
 
     public void Add4()
     {
         enteredNumbers += "4";
+        PlayerLose();
         Debug.Log("Wrong Number!");
     }
 
     public void Add5()
     {
         enteredNumbers += "5";
+        PlayerLose();
         Debug.Log("Wrong Number!");
     }
 
     public void Add6()
     {
         enteredNumbers += "6";
+        PlayerLose();
         Debug.Log("Wrong Number!");
     }
 
     public void Add7()
     {
         enteredNumbers += "7";
+        PlayerLose();
         Debug.Log("Wrong Number!");
     }
 
     public void Add8()
     {
         enteredNumbers += "8";
+        PlayerLose();
         Debug.Log("Wrong Number!");
     }
     public void Add9()
     {
         enteredNumbers += "9";
+        
+    }
+
+    private void PlayerLose()
+    {
+        GameEvents.current.PlayerWin();
+        GameEvents.current.CloseGame();
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
 }

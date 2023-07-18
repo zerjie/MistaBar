@@ -39,6 +39,7 @@ public class MicroGameManager : MonoBehaviour
         selectedMicroGame = microGameList[selectedIndex];
         OpenMicroGame(selectedMicroGame);
         timer.timeRemaining = 5f;
+        timer.HappyManager();
     }
     public void OpenMicroGame(int microGameIndex)
     {
