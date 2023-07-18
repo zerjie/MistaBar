@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class PickDrunkController : MonoBehaviour
 {
+
+    bool closedGame = false;
     public void RightObjectClicked()
     {
-        GameEvents.current.PlayerWin();
-        GameEvents.current.CloseGame();
-        //remove timer
+        if (closedGame == false)
+        {
+            GameEvents.current.PlayerWin();
+            GameEvents.current.CloseGame();
+            closedGame = true;
+        }
+
     }
 }
