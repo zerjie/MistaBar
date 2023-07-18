@@ -87,7 +87,6 @@ public class PickIngredientController : MonoBehaviour
 
     public void WrongObjectClicked()
     {
-        Debug.Log("Wrong object clicked ");
     }
 
 

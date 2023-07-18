@@ -8,17 +8,15 @@ public class Timer : MonoBehaviour
 {
     float allowedTime = 5.0f;
     public float timeRemaining;
-    [SerializeField] Image timerBar;
     public Image managerSprite;
     public Sprite happySprite;
     public Sprite angrySprite;
-    public GameObject manager;
 
     // Start is called before the first frame update
     void Start()
     {
         timeRemaining = allowedTime;
-        managerSprite = manager.GetComponent<Image>();
+        managerSprite = GetComponent<Image>();
     }
 
     // Update is called once per frame
@@ -43,7 +41,7 @@ public class Timer : MonoBehaviour
     {
         timeRemaining -= Time.deltaTime;
         float timerFill = timeRemaining / allowedTime;
-        timerBar.fillAmount = timerFill;
+        managerSprite.fillAmount = timerFill;
     }
 
     public void HappyManager()

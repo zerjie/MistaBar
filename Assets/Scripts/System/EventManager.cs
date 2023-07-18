@@ -7,7 +7,8 @@ public class EventManager : MonoBehaviour
 {
     public MicroGameManager microGameManager;
     [SerializeField] bool closedGame = false;
-    public Timer timer;
+    public GameObject timer;
+    public LifeManager lifeManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,35 +23,37 @@ public class EventManager : MonoBehaviour
     private void OnPlayerWin()
     {
         Debug.Log("player won!");
-        timer.HappyManager();
+        timer.GetComponent<Timer>().HappyManager(); 
     }
 
     private void OnPlayerLoss()
     {
         Debug.Log("player lost!");
+        lifeManager.LoseLife();
     }
 
     private void OnTimeOut()
     {
         Debug.Log("Time ran out!");
+        lifeManager.LoseLife();
 
     }
 
     private void OnOpenGame()
     {
         closedGame = false;
-        timer.timeRemaining = 5f;
-        timer.HappyManager();
+        timer.SetActive(true);
+        timer.GetComponent<Timer>().timeRemaining = 5f;
+        timer.GetComponent<Timer>().HappyManager();
     }
     private void OnCloseGame()
     {
-        Debug.Log("closing game");
         if (closedGame == false)
         {
             SceneManager.UnloadSceneAsync(microGameManager.selectedMicroGame);
             microGameManager.microGameList.Remove(microGameManager.selectedMicroGame);
-            timer.timeRemaining = 0f;
             closedGame = true;
+            timer.SetActive(false);
             GameEvents.current.Transition();
         }
     }

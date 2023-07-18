@@ -38,6 +38,7 @@ public class MicroGameManager : MonoBehaviour
         selectedMicroGame = microGameList[selectedIndex];
         OpenMicroGame(selectedMicroGame);
         GameEvents.current.OpenGame();
+        Debug.Log("Opening Microgame: " + selectedMicroGame);
     }
     public void OpenMicroGame(int microGameIndex)
     {

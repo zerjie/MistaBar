@@ -13,6 +13,7 @@ public class RightObjectClick : MonoBehaviour
     {
         ///finds object in scene
         controller = FindObjectOfType<PickIngredientController>();
+        spriteRenderer= gameObject.GetComponent<SpriteRenderer>();
     }
 
     //calls function when player clicks
@@ -23,7 +24,6 @@ public class RightObjectClick : MonoBehaviour
             controller.RightObjectClicked();
             spriteRenderer.sprite = newSprite;
         }
-        beenClicked = true;
-        Debug.Log("Obj clicked");
+        beenClicked = true; 
     }
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6273757072916695665}
   - component: {fileID: 2134751582988902187}
   m_Layer: 0
-  m_Name: Triangle
+  m_Name: Drunk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

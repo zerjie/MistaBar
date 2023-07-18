@@ -21,6 +21,5 @@ public class PickDrunkClick : MonoBehaviour
             controller.RightObjectClicked();
         }
         beenClicked= true;
-        Debug.Log("Obj clicked");
     }
 }
