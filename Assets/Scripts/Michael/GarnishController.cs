@@ -16,12 +16,14 @@ public class GarnishController : MonoBehaviour
     int correctSpawnIndex;
     public int pointCount;
     public int rightObjects;
+    bool closedGame = false;
 
     // Start is called before the first frame update
     void Start()
     {
         rightObjects = 0;
         pointCount = 0;
+        closedGame = false;
         //Set array size
         spawnedObjects = new GameObject[spawnPoints.Length];
 
@@ -36,10 +38,11 @@ public class GarnishController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pointCount == rightObjects && rightObjects != 0)
+        if (pointCount == rightObjects && rightObjects != 0 && closedGame == false)
         {
             GameEvents.current.PlayerWin();
             GameEvents.current.CloseGame();
+            closedGame = true;
 
         }
     }

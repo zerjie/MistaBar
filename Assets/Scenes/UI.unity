@@ -262,7 +262,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.0172548, y: 0.026260879}
   m_AnchorMax: {x: 0.9514905, y: 0.6181056}
-  m_AnchoredPosition: {x: -0.5041199, y: -3.1179962}
+  m_AnchoredPosition: {x: -0.5041504, y: -3.1180115}
   m_SizeDelta: {x: 2.5565186, y: 9.763306}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &491952658
@@ -286,10 +286,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 42ea9c37eb7b41543ae17dad98b201bc, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -321,7 +321,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &531046408
 RectTransform:
   m_ObjectHideFlags: 0
@@ -339,7 +339,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.16750962, y: 0.05410559}
   m_AnchorMax: {x: 0.88874525, y: 0.09626088}
-  m_AnchoredPosition: {x: 0.5016937, y: 0}
+  m_AnchoredPosition: {x: 0.501709, y: 0}
   m_SizeDelta: {x: 2.9965057, y: -1.4827003}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &531046409
@@ -357,6 +357,7 @@ MonoBehaviour:
   timeRemaining: 0
   timerBar: {fileID: 531046410}
   managerSprite: {fileID: 491952658}
+  happySprite: {fileID: 21300000, guid: 42ea9c37eb7b41543ae17dad98b201bc, type: 3}
   angrySprite: {fileID: 21300000, guid: 5b2cc21a26492394bb6aa6fdf5c49b1f, type: 3}
   manager: {fileID: 491952656}
 --- !u!114 &531046410
@@ -529,7 +530,6 @@ MonoBehaviour:
   microGameList: 03000000040000000500000006000000
   selectedIndex: 0
   selectedMicroGame: 0
-  timer: {fileID: 531046409}
 --- !u!114 &2020631049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -543,6 +543,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   microGameManager: {fileID: 2020631048}
+  closedGame: 0
+  timer: {fileID: 531046409}
 --- !u!114 &2020631050
 MonoBehaviour:
   m_ObjectHideFlags: 0

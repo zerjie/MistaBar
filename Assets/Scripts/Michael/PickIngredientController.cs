@@ -14,6 +14,7 @@ public class PickIngredientController : MonoBehaviour
     public GameObject spawnedObject;
     public GameObject rightObject;
     int correctSpawnIndex;
+    bool closedGame = false;
     public int pointCount;
     public int rightObjects;
 
@@ -30,16 +31,19 @@ public class PickIngredientController : MonoBehaviour
 
         InstantiateGameObjects();
         CountRightObjects();
-        
+
+        closedGame = false;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (pointCount == rightObjects && rightObjects != 0)
+        if (pointCount == rightObjects && rightObjects != 0 && closedGame == false)
         {
             GameEvents.current.PlayerWin();
             GameEvents.current.CloseGame();
+            closedGame = true;
         }
     }
 

@@ -713,9 +713,9 @@ MonoBehaviour:
   - {fileID: 2023547619}
   clickableObjects:
   - {fileID: 5183091260974479352, guid: 329b27ba16d12414e9cda03e7ffb9989, type: 3}
-  - {fileID: 7830686284051357682, guid: 4da06f37d586cbf40bb224cbb70b6fd1, type: 3}
+  - {fileID: 8574453182211803585, guid: 817df584dd4ff0c4595cd036e13cc4ac, type: 3}
   spawnedObjects: []
-  spawnedObject: {fileID: 5183091260974479352, guid: 329b27ba16d12414e9cda03e7ffb9989, type: 3}
-  rightObject: {fileID: 7830686284051357682, guid: 4da06f37d586cbf40bb224cbb70b6fd1, type: 3}
+  spawnedObject: {fileID: 8574453182211803585, guid: 817df584dd4ff0c4595cd036e13cc4ac, type: 3}
+  rightObject: {fileID: 5183091260974479352, guid: 329b27ba16d12414e9cda03e7ffb9989, type: 3}
   pointCount: 0
   rightObjects: 0
