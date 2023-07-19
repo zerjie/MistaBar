@@ -65,6 +65,15 @@ public class MicroGameManager : MonoBehaviour
                 selectedMicroGame = 6;
                 break;
 
+            case 7:
+                SceneManager.LoadScene(7, LoadSceneMode.Additive);
+                selectedMicroGame = 7;
+                break;
+            case 8:
+                SceneManager.LoadScene(8, LoadSceneMode.Additive);
+                selectedMicroGame = 8;
+                break;
+
 
             // Add more cases for other mini-games
 

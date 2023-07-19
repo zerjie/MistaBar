@@ -26,4 +26,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PickTheDrunk.unity
     guid: ed5be897798860b4b827dc526032a830
+  - enabled: 1
+    path: Assets/Scenes/DrunkenDodger.unity
+    guid: 786c0165da9c21b4381daae63f3ba4fe
+  - enabled: 1
+    path: Assets/Scenes/ShakingMicrogame.unity
+    guid: 45af23d31865afd44b791e8266e66e7c
   m_configObjects: {}

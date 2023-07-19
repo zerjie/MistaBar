@@ -785,10 +785,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb91da3060d24874c9f71dfc2b9bc3ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  microGameList: 03000000040000000500000006000000
+  microGameList: 08000000
   selectedIndex: 0
   selectedMicroGame: 0
-  timer: {fileID: 491952660}
 --- !u!114 &2020631049
 MonoBehaviour:
   m_ObjectHideFlags: 0
