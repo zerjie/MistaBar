@@ -7,7 +7,7 @@ using TMPro;
 public class DD_tutorial : MonoBehaviour
 {
     private TextMeshProUGUI textComponent;
-    private float flashInterval = 0.5f;
+    private float flashInterval = 0.15f;
     private int flashCount = 6;
     private float timer = 0f;
 
@@ -15,7 +15,7 @@ public class DD_tutorial : MonoBehaviour
     {
         textComponent = GetComponent<TextMeshProUGUI>();
 
-        InvokeRepeating("Flash Text", 0f, flashInterval);
+        StartCoroutine(FlashTextRoutine());
     }
 
     private void Update()
@@ -24,20 +24,25 @@ public class DD_tutorial : MonoBehaviour
 
         if (timer >= 3f)
         {
-            textComponent.enabled = false; Destroy(this);
+            textComponent.enabled = false;
+            Destroy(this);
         }
 
     }
 
-    private void FlashText()
+    private System.Collections.IEnumerator FlashTextRoutine()
     {
-        textComponent.enabled = !textComponent.enabled;
-        flashCount--;
-        if (flashCount <= 0)
+        while (flashCount > 0)
+        {
+            textComponent.enabled = !textComponent.enabled;
+            yield return new
+                WaitForSeconds(flashInterval);
+            flashCount--;
+        }
 
-            CancelInvoke("FlashText");
         textComponent.enabled = true;
+
     }
 }
-
+    
 
