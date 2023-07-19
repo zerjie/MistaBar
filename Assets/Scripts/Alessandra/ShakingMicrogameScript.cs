@@ -1,30 +1,24 @@
-using JetBrains.Annotations;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
-using System.Timers;
-using Unity.VisualScripting;
-using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 public class ShakingMicrogameScript : MonoBehaviour
 {
     // Change depending on UI Manager
+    [Header("UI")]
     public GameObject instruction;
+    public Text counterText;
     public int counter;
+
     //public float timer;
     //private float _timer;
-    
-    // Fixed 
-    public float mashDelay = 0.5f;
-    public GameObject shaker;
     //public GameObject timerbar;
     //private float scalextb;
-    
+
     //[SerializeField] Text counterUI;
+
+    [Header("Shaking")]
+    public float mashDelay = 0.5f;
+    public GameObject shaker;
 
     private float mash; 
     bool pressed;
@@ -48,7 +42,9 @@ public class ShakingMicrogameScript : MonoBehaviour
 
     void Update()
     {
+        counterText.text = counter.ToString() + "/50";
         GameStart();
+
     }
 
     public void GameStart()
@@ -63,6 +59,7 @@ public class ShakingMicrogameScript : MonoBehaviour
             {
                 pressed = true;
                 mash = mashDelay;
+
             }
 
             else if (Input.GetKeyUp(KeyCode.Space))
