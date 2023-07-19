@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9170009140975333058}
   - component: {fileID: 8508955435861311036}
   - component: {fileID: 5107094137345448563}
-  - component: {fileID: -6802006156213346014}
+  - component: {fileID: 1664626734854061983}
   m_Layer: 0
   m_Name: RightObject
   m_TagString: RightObject
@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &9170009140975333058
 SpriteRenderer:
@@ -76,12 +76,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: d187a79f166eb3143a72513a50e025e9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cd059c2d090fa8f47af7b191b6544060, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.51, y: 2.01}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -124,7 +124,7 @@ PolygonCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 4.096, y: 4.096}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 0.51, y: 2.01}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -165,7 +165,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &-6802006156213346014
+--- !u!114 &1664626734854061983
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -174,9 +174,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5183091260974479352}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ededf676259b4534f9840958167df024, type: 3}
+  m_Script: {fileID: 11500000, guid: 43b5bd4eadabef94d80564c49f99e714, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beenClicked: 0
-  garnish: {fileID: 791884194307863000, guid: c0583b4e855c74b8c82e7b9b5efb5ce9, type: 3}
-  newSprites: []
+  newSprite: {fileID: 21300000, guid: b281b91a70a624a0da1c43adc1c30c7b, type: 3}

@@ -6,8 +6,8 @@ public class RightObjectClick : MonoBehaviour
 {
     private PickIngredientController controller;
     private bool beenClicked = false;
-    public Sprite newSprite;
     private SpriteRenderer spriteRenderer;
+    public Sprite newSprite;
 
     public void Start()
     {

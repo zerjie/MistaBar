@@ -25,7 +25,7 @@ public class PhoneGameController : MonoBehaviour
         numberDislay.text = enteredNumbers;
         if (enteredNumbers == "911")
         {
-            Debug.Log("Help arriving");
+            Debug.Log("Help arriving!");
             GameEvents.current.PlayerWin();
             GameEvents.current.CloseGame();
             Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);

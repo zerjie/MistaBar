@@ -2,19 +2,22 @@ using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ExampleGameManager : MonoBehaviour
 {
-    //To ensure that there's no conflicts on loading, we tell the SceneSwapper to load our scenes from Start here, to prevent script load execution errors
+
+    // To ensure that there's no conflicts on loading, we tell the SceneSwapper to load our scenes from Start here, to prevent script load execution errors
     void Start()
     {
         //Tell SceneSwapper to load the starting UI
         SceneSwapper.instance.LoadStartingUI();
-        SceneManager.LoadScene("MainMenuScene");
-        
-        //SelectScene("Microgame1");
+        SelectScene("MainMenu");
+
+        // If player presses the play button, start game
+
     }
 
     public void PlayGame()
@@ -22,6 +25,7 @@ public class ExampleGameManager : MonoBehaviour
         // Have a cut scene showing the instructions here
         // Fade in and fade out optional 
         RandomSelectScene();
+        EditorSceneManager.CloseScene(SceneManager.GetSceneByName("MainMenu"), true);
     }
 
     public void RandomSelectScene()

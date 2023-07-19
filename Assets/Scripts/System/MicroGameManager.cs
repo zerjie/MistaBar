@@ -9,7 +9,6 @@ public class MicroGameManager : MonoBehaviour
 
     public int selectedIndex;
     public int selectedMicroGame;
-    public Timer timer;
 
     private static MicroGameManager instance;
 
