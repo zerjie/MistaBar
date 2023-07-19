@@ -1,44 +1,77 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.RuleTile.TilingRuleOutput;
+using UnityEngine.EventSystems;
+using UnityEngine.Playables;
 
 public class ObjectMovement : MonoBehaviour
 {
+    [SerializeField]
+    private Sprite[] walkingFrames;
+    private int currentFrameIndex = 0;
+    private float frameRate = 0.2f;
+    private float frameTimer = 0f;
 
-    [Header("ObjectMovementSettings")]
+    public float minSpeed = 2f;
+    public float maxSpeed = 5f;
+    public float initialScale = 0.5f;
+    public float finalScale = 2f;
+    public float maxHeight = 10f;
 
-    [SerializeField] private float minSpeed = 2f;
-    [SerializeField] private float maxSpeed = 5f;
-    [SerializeField] private float moveSpeed;
-
-    [SerializeField] private float finalScale = 2f;
-    [SerializeField] private float initialScale = 0.5f;
-    [SerializeField] private float maxHeight = 10f;
-
-    
+    private float moveSpeed;
     private Vector3 moveDirection;
-    private Transform playerTransform;
+    private UnityEngine.Transform playerTransform;
 
     void Start()
-    {      
-        moveSpeed = Random.Range(minSpeed, maxSpeed);       
-        moveDirection = new Vector3(Random.Range(-1f, 1f), -1f, 0f).normalized;      
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;       
+    {
+        moveSpeed = UnityEngine.Random.Range(minSpeed, maxSpeed);
+        moveDirection = new Vector3(UnityEngine.Random.Range(-1f, 1f), -1f, 0f).normalized;
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         transform.localScale = new Vector3(initialScale, initialScale, 1f);
+
+        GetComponent<SpriteRenderer>().sprite = walkingFrames[currentFrameIndex];
     }
 
     void Update()
     {
         GetComponent<Rigidbody2D>().velocity = moveDirection * moveSpeed;
 
-        if (transform.position.y < -10f)
+
         {
-            Destroy(gameObject);
+            if (transform.position.y < -10f)
+            {
+                Destroy(transform.parent.gameObject); // Destroy the parent game object
+            }
+        
+
         }
-              
-        float distanceToPlayer = Mathf.Abs(transform.position.y - playerTransform.position.y);
-        float t = Mathf.Clamp01(distanceToPlayer / maxHeight);
-        float scale = Mathf.Lerp(finalScale, initialScale, t);  
-        transform.localScale = new Vector3(scale, scale, 1f);
+
+            if (walkingFrames.Length > 0)
+        {
+            GetComponent<SpriteRenderer>().sprite = walkingFrames[currentFrameIndex];
+
+            frameTimer += Time.deltaTime;
+            if (frameTimer >= frameRate)
+            {
+                currentFrameIndex = (currentFrameIndex + 1) % walkingFrames.Length;
+                frameTimer = 0f;
+            }
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            ChangeDirection();
+        }
+    }
+
+    void ChangeDirection()
+    {
+        float newDirectionX = -moveDirection.x;
+        float newDirectionY = moveDirection.y;
+        moveDirection = new Vector3(newDirectionX, newDirectionY, 0f).normalized;
     }
 }

@@ -1,0 +1,43 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class LifeManager : MonoBehaviour
+{
+    public int playerLives = 4;
+    [SerializeField] GameObject life1;
+    [SerializeField] GameObject life2;
+    [SerializeField] GameObject life3;
+    [SerializeField] GameObject life4;
+
+    private void Start()
+    {
+        playerLives = 4;
+    }
+
+    private void Update()
+    {
+        if (playerLives == 3)
+        {
+            life4.SetActive(false);
+        }
+        if (playerLives == 2)
+        {
+            life4.SetActive(false);
+        }
+        if (playerLives == 1)
+        {
+            life4.SetActive(false);
+        }
+        if (playerLives == 0)
+        {
+            Debug.Log("No more lives, GAME OVER");
+        }
+    }
+
+    public void LoseLife()
+    {
+        playerLives--;
+    }
+
+}
