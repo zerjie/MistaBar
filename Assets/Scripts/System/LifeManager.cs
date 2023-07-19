@@ -32,7 +32,8 @@ public class LifeManager : MonoBehaviour
         if (playerLives == 0)
         {
             life1.SetActive(false);
-            Debug.Log("No more lives, GAME OVER");
+            GameEvents.current.CloseGame();
+            GameEvents.current.GameOver();
         }
     }
 

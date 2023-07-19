@@ -15,6 +15,7 @@ public class Timer : MonoBehaviour
     public GameObject instruction1;
     public GameObject instruction2;
     public GameObject instruction3;
+    public GameObject instruction4;
 
     // Start is called before the first frame update
     void Start()
@@ -32,8 +33,10 @@ public class Timer : MonoBehaviour
             instruction1.SetActive(false);
             instruction2.SetActive(false);
             instruction3.SetActive(false);
+            instruction4.SetActive(false);
+
         }
-        if (timeRemaining < 2.5)
+        if (timeRemaining < 4)
         {
             
             managerSprite.sprite = angrySprite;

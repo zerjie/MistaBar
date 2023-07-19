@@ -16,57 +16,75 @@ public class GameEvents : MonoBehaviour
 
     }
 
-    public event Action onPlayerWin;
+    public event Action OnPlayerWin;
     public void PlayerWin()
     {
-        if (onPlayerWin != null)
+        if (OnPlayerWin != null)
         {
-            onPlayerWin();
+            OnPlayerWin();
         }
     }
 
-    public event Action onPlayerLose;
+    public event Action OnPlayerLose;
     public void PlayerLose()
     {
-        if (onPlayerLose != null)
+        if (OnPlayerLose != null)
         {
-            onPlayerLose();
+            OnPlayerLose();
         }
     }
 
-    public event Action onTimeOut;
+    public event Action OnTimeOut;
     public void TimeOut()
     {
-        if (onTimeOut != null)
+        if (OnTimeOut != null)
         {
-            onTimeOut();
+            OnTimeOut();
         }
     }
 
-    public event Action onOpenGame;
+    public event Action OnOpenGame;
     public void OpenGame()
     {
-        if (onOpenGame != null)
+        if (OnOpenGame != null)
         {
-            onOpenGame();
+            OnOpenGame();
         }
     }
 
-    public event Action onCloseGame;
+    public event Action OnCloseGame;
     public void CloseGame()
     {
-        if (onCloseGame != null)
+        if (OnCloseGame != null)
         {
-            onCloseGame();
+            OnCloseGame();
         }
     }
 
-    public event Action onTransition;
+    public event Action OnTransition;
     public void Transition()
     {
-        if (onTransition != null)
+        if (OnTransition != null)
         {
-            onTransition();
+            OnTransition();
+        }
+    }
+
+    public event Action OnGameOver;
+    public void GameOver()
+    {
+        if (OnGameOver != null)
+        {
+            OnGameOver();
+        }
+    }
+
+    public event Action OnFinishGame;
+    public void FinishGame()
+    {
+        if (OnFinishGame != null)
+        {
+            OnFinishGame();
         }
     }
 

@@ -296,7 +296,7 @@ GameObject:
   - component: {fileID: 161093270}
   - component: {fileID: 161093269}
   m_Layer: 5
-  m_Name: NextGame
+  m_Name: Next
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -320,8 +320,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -10.4, y: -36.9}
-  m_SizeDelta: {x: 500, y: 102.1}
+  m_AnchoredPosition: {x: -14.5, y: -37.7}
+  m_SizeDelta: {x: 344.4486, y: 102.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &161093269
 MonoBehaviour:
@@ -635,7 +635,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: NEXT GAME
+  m_text: NEXT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4007aa0deefb90e4f89f6310ca884572, type: 2}
   m_sharedMaterial: {fileID: 3788336987969207752, guid: 4007aa0deefb90e4f89f6310ca884572, type: 2}

@@ -13,24 +13,29 @@ public class EventManager : MonoBehaviour
     public GameObject instruction1;
     public GameObject instruction2;
     public GameObject instruction3;
+    public GameObject instruction4;
     public GameObject instruction1text;
     public float timeForMessage = 2f;
     public float timeFromEnd;
+    bool gameOver = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        GameEvents.current.onPlayerWin += OnPlayerWin;
-        GameEvents.current.onPlayerLose += OnPlayerLoss;
-        GameEvents.current.onTimeOut += OnTimeOut;
-        GameEvents.current.onOpenGame += OnOpenGame;
-        GameEvents.current.onCloseGame += OnCloseGame;
-        GameEvents.current.onTransition += OnTransition;
+        GameEvents.current.OnPlayerWin += OnPlayerWin;
+        GameEvents.current.OnPlayerLose += OnPlayerLoss;
+        GameEvents.current.OnTimeOut += OnTimeOut;
+        GameEvents.current.OnOpenGame += OnOpenGame;
+        GameEvents.current.OnCloseGame += OnCloseGame;
+        GameEvents.current.OnTransition += OnTransition;
+        GameEvents.current.OnGameOver += OnGameOver;
+        GameEvents.current.OnFinishGame += OnFinishGame;
     }
 
     private void OnPlayerWin()
     {
         Debug.Log("player won!");
+        instruction4.SetActive(false);
         instruction2.SetActive(false);
         instruction3.SetActive(false);
         instruction1.SetActive(true);
@@ -46,6 +51,7 @@ public class EventManager : MonoBehaviour
     private void OnPlayerLoss()
     {
         Debug.Log("player lost!");
+        instruction4.SetActive(false);
         instruction2.SetActive(false);
         instruction3.SetActive(false);
         instruction1.SetActive(true);
@@ -60,6 +66,7 @@ public class EventManager : MonoBehaviour
 
     private void OnTimeOut()
     {
+        instruction4.SetActive(false);
         instruction2.SetActive(false);
         instruction3.SetActive(false);
         instruction1.SetActive(true);
@@ -100,5 +107,26 @@ public class EventManager : MonoBehaviour
     {
         SceneManager.LoadScene(2, LoadSceneMode.Additive);
 
+    }
+    private void OnGameOver()
+    {
+        if (!gameOver)
+        {
+            SceneManager.LoadScene(2, LoadSceneMode.Additive);
+            instruction1.SetActive(true);
+            instruction1text.GetComponent<TMP_Text>().text = "GAME OVER!";
+            gameOver = true;
+        }
+    }
+
+    private void OnFinishGame()
+    {
+        if (!gameOver)
+        {
+            SceneManager.LoadScene(2, LoadSceneMode.Additive);
+            instruction1.SetActive(true);
+            instruction1text.GetComponent<TMP_Text>().text = "JOB DONE!";
+            gameOver = true;
+        }
     }
 }

@@ -14,9 +14,11 @@ public class MicroGameManager : MonoBehaviour
     public GameObject instruction1;
     public GameObject instruction2;
     public GameObject instruction3;
+    public GameObject instruction4;
     public GameObject instruction1text;
     public GameObject instruction2text;
     public GameObject instruction3text;
+    public GameObject instruction4text;
     private static MicroGameManager instance;
 
     private void Awake()
@@ -38,6 +40,14 @@ public class MicroGameManager : MonoBehaviour
         OpenMicroGame(selectedMicroGame);
 
     }
+
+    private void Update()
+    {
+        if (microGameList.Count == 0)
+        {
+            GameEvents.current.FinishGame();
+        }
+    }
     //randomly selects a minigame
     public void NewRandomMicroGame()
     {
@@ -54,8 +64,8 @@ public class MicroGameManager : MonoBehaviour
         switch (selectedMicroGame)
         {
             case 3:
-                instruction1.SetActive(true);
-                instruction1text.GetComponent<TMP_Text>().text = "GARNISH!";
+                instruction4.SetActive(true);
+                instruction4text.GetComponent<TMP_Text>().text = "GARNISH!";
                 SceneManager.LoadScene(3, LoadSceneMode.Additive);
                 selectedMicroGame = 3;
                 break;
@@ -82,8 +92,8 @@ public class MicroGameManager : MonoBehaviour
                 break;
 
             case 7:
-                instruction1.SetActive(true);
-                instruction1text.GetComponent<TMP_Text>().text = "DODGE!";
+                instruction4.SetActive(true);
+                instruction4text.GetComponent<TMP_Text>().text = "DODGE!";
                 SceneManager.LoadScene(7, LoadSceneMode.Additive);
                 selectedMicroGame = 7;
                 break;
