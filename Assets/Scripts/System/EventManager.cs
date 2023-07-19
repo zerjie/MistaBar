@@ -15,7 +15,7 @@ public class EventManager : MonoBehaviour
         GameEvents.current.onPlayerWin += OnPlayerWin;
         GameEvents.current.onPlayerLose += OnPlayerLoss;
         GameEvents.current.onTimeOut += OnTimeOut;
-        GameEvents.current.onCloseGame += OnOpenGame;
+        GameEvents.current.onOpenGame += OnOpenGame;
         GameEvents.current.onCloseGame += OnCloseGame;
         GameEvents.current.onTransition += OnTransition;
     }
@@ -52,7 +52,6 @@ public class EventManager : MonoBehaviour
         {
             SceneManager.UnloadSceneAsync(microGameManager.selectedMicroGame);
             microGameManager.microGameList.Remove(microGameManager.selectedMicroGame);
-            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
             closedGame = true;
             timer.SetActive(false);
             GameEvents.current.Transition();
