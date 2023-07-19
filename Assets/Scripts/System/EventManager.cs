@@ -52,6 +52,7 @@ public class EventManager : MonoBehaviour
         {
             SceneManager.UnloadSceneAsync(microGameManager.selectedMicroGame);
             microGameManager.microGameList.Remove(microGameManager.selectedMicroGame);
+            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
             closedGame = true;
             timer.SetActive(false);
             GameEvents.current.Transition();

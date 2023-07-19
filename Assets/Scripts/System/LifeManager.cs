@@ -23,14 +23,15 @@ public class LifeManager : MonoBehaviour
         }
         if (playerLives == 2)
         {
-            life4.SetActive(false);
+            life3.SetActive(false);
         }
         if (playerLives == 1)
         {
-            life4.SetActive(false);
+            life2.SetActive(false);
         }
         if (playerLives == 0)
         {
+            life1.SetActive(false);
             Debug.Log("No more lives, GAME OVER");
         }
     }
