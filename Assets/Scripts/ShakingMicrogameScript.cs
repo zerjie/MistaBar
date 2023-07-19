@@ -15,11 +15,14 @@ public class ShakingMicrogameScript : MonoBehaviour
     // Change depending on UI Manager
     public GameObject instruction;
     public int counter;
+    //public float timer;
+    //private float _timer;
     
     // Fixed 
     public float mashDelay = 0.5f;
     public GameObject shaker;
-    public GameObject timerbar;
+    //public GameObject timerbar;
+    //private float scalextb;
     
     //[SerializeField] Text counterUI;
 
@@ -32,8 +35,10 @@ public class ShakingMicrogameScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //scalextb = timerbar.transform.localScale.x;
 
         mash = mashDelay;
+        //_timer = timer;
 
         //Countdown();
 
@@ -50,7 +55,9 @@ public class ShakingMicrogameScript : MonoBehaviour
     {
         if (!callOnce)
         {
+            //timerbar.transform.localScale = new Vector2(scalextb * (_timer / timer), timerbar.transform.localScale.y);
             mash -= Time.deltaTime;
+            //_timer -= Time.deltaTime;
 
             if (Input.GetKeyDown(KeyCode.Space) && !pressed)
             {
@@ -77,33 +84,55 @@ public class ShakingMicrogameScript : MonoBehaviour
                 }
             }
 
-            if (counter == shakesToWin)
+            if (counter >= shakesToWin)
             {
                 WinCondition();
             }
 
+            else
+            {
+                LoseCondition();
+            }
+
+            /*if (_timer <= 0)
+            {
+                if (counter < 30)
+                {
+                    LoseCondition();
+                }
+                else
+                {
+                    WinCondition();
+                }
+
+                _timer = 0;
                 callOnce = true;
             }
+            */
         }
     public void WinCondition()
     {
-        instruction.GetComponent<Text>().text = "Win";
+        GameEvents.current.PlayerWin();
+        /*instruction.GetComponent<Text>().text = "Win";
         instruction.SetActive(true);
         shaker.SetActive(false);
         Debug.Log("Player Succeeded");
         instruction.transform.position = new Vector3(0f, 0f, 0f);
+        */
         // Insert positive game end here to return to UI and Game Manager
-        return;
+        GameEvents.current.CloseGame();
     }
 
     public void LoseCondition()
     {
-        instruction.GetComponent<Text>().text = "FAILED";
+        GameEvents.current.PlayerLose();
+        /*instruction.GetComponent<Text>().text = "FAILED";
         instruction.SetActive(true);
         shaker.SetActive(false);
-        Debug.Log("Player Failed");
+        Debug.Log("Microgame Over");
         instruction.transform.position = new Vector3(0f, 0f, 0f);
         // Insert negative game end here to return to UI and Game Manager
-        return;
+        */
+        GameEvents.current.CloseGame();
     }
 }
