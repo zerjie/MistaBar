@@ -165,7 +165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ededf676259b4534f9840958167df024, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beenClicked: 0
 --- !u!114 &-1251001042317340666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,10 +179,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   garnish: {fileID: 8159342798885995136}
   newSprites:
-  - {fileID: 21300000, guid: d5bc7f4278af3484dadb486b4299c1c0, type: 3}
-  - {fileID: 21300000, guid: 849cf086b5dd4144faaebe10a7222443, type: 3}
-  - {fileID: 21300000, guid: c389a7a44a7b7324cbe0503704f765aa, type: 3}
-  beenClicked: 0
+  - {fileID: 21300000, guid: 3c7433eecc4530040a9fcd96c291e298, type: 3}
+  - {fileID: 21300000, guid: 29774dc25abd84a40890941111959b2e, type: 3}
+  - {fileID: 21300000, guid: 0d09331c4ac16bb4f91d44d2200f9390, type: 3}
 --- !u!1 &8159342798885995136
 GameObject:
   m_ObjectHideFlags: 0

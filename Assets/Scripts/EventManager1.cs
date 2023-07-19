@@ -3,20 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Example;
-using Example.Player;
 
 namespace Example
 {
-    public class EventManager : MonoBehaviour
+    public class EventManager1 : MonoBehaviour
     {
-        public static EventManager instance;
+        public static EventManager1 instance;
 
         public void Awake()
         {
-            if (instance == null)
-            {
-                instance = this;
-            }
 
             //PlayerGameScript ps;
         }

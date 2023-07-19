@@ -6,17 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main Menu.unity
-    guid: 01d965ddea511f342874197ce74bc47a
-  - enabled: 1
-<<<<<<< HEAD
     path: Assets/Scenes/MainMenu.unity
     guid: 56932b7b0e428de4f954b3bed1571189
   - enabled: 1
-    path: Assets/Scenes/System.unity
-=======
     path: Assets/Scenes/UI.unity
->>>>>>> Integrated
     guid: e1857d39c6495f04bae442a84232cc4f
   - enabled: 1
     path: Assets/Scenes/Transition.unity
@@ -33,7 +26,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PickTheDrunk.unity
     guid: ed5be897798860b4b827dc526032a830
-  - enabled: 1
-    path: Assets/Scenes/ShakingMicrogame.unity
-    guid: 45af23d31865afd44b791e8266e66e7c
   m_configObjects: {}
