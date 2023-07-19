@@ -6,11 +6,15 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    float allowedTime = 5.0f;
+    float allowedTime = 8.0f;
     public float timeRemaining;
     public Image managerSprite;
     public Sprite happySprite;
     public Sprite angrySprite;
+    public MicroGameManager microGameManager;
+    public GameObject instruction1;
+    public GameObject instruction2;
+    public GameObject instruction3;
 
     // Start is called before the first frame update
     void Start()
@@ -23,16 +27,27 @@ public class Timer : MonoBehaviour
     void Update()
     {
         FillTimer();
-
+        if (timeRemaining < 6)
+        {
+            instruction1.SetActive(false);
+            instruction2.SetActive(false);
+            instruction3.SetActive(false);
+        }
         if (timeRemaining < 2.5)
         {
             
             managerSprite.sprite = angrySprite;
         }
 
-        if (timeRemaining <= 0)
+        if (timeRemaining <= 0 && microGameManager.selectedMicroGame !=7)
         {
             GameEvents.current.TimeOut();
+            GameEvents.current.CloseGame();
+        }
+
+        if (timeRemaining <= 0 && microGameManager.selectedMicroGame == 7)
+        {
+            GameEvents.current.PlayerWin();
             GameEvents.current.CloseGame();
         }
     }

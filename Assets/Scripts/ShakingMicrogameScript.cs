@@ -13,7 +13,6 @@ using UnityEngine.UIElements;
 public class ShakingMicrogameScript : MonoBehaviour
 {
     // Change depending on UI Manager
-    public GameObject instruction;
     public int counter;
     //public float timer;
     //private float _timer;
@@ -43,7 +42,6 @@ public class ShakingMicrogameScript : MonoBehaviour
         //Countdown();
 
         // Change later depending on UI
-        instruction.SetActive(true);
     }
 
     void Update()
@@ -70,9 +68,6 @@ public class ShakingMicrogameScript : MonoBehaviour
                 pressed = false;
                 counter++;
 
-                // Change later depending on UI
-                instruction.SetActive(false);
-
                 if (counter % 2 == 0)
                 {
                     shaker.transform.position = new Vector3(-1.32f, -0.8f, 0.0f);
@@ -89,10 +84,6 @@ public class ShakingMicrogameScript : MonoBehaviour
                 WinCondition();
             }
 
-            else
-            {
-                LoseCondition();
-            }
 
             /*if (_timer <= 0)
             {
@@ -110,6 +101,7 @@ public class ShakingMicrogameScript : MonoBehaviour
             }
             */
         }
+    }
     public void WinCondition()
     {
         GameEvents.current.PlayerWin();
@@ -120,19 +112,6 @@ public class ShakingMicrogameScript : MonoBehaviour
         instruction.transform.position = new Vector3(0f, 0f, 0f);
         */
         // Insert positive game end here to return to UI and Game Manager
-        GameEvents.current.CloseGame();
-    }
-
-    public void LoseCondition()
-    {
-        GameEvents.current.PlayerLose();
-        /*instruction.GetComponent<Text>().text = "FAILED";
-        instruction.SetActive(true);
-        shaker.SetActive(false);
-        Debug.Log("Microgame Over");
-        instruction.transform.position = new Vector3(0f, 0f, 0f);
-        // Insert negative game end here to return to UI and Game Manager
-        */
         GameEvents.current.CloseGame();
     }
 }

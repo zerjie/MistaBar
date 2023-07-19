@@ -9,7 +9,6 @@ public class PlayerLives : MonoBehaviour
     public GameObject bottleContainer;
 
     private int currentBottles;
-    private bool isGameOver = false;
 
     private List<BottleFalling> bottles;
 
@@ -83,8 +82,8 @@ public class PlayerLives : MonoBehaviour
     void GameOver()
     {
         gameOverScreen.SetActive(true);
-        Debug.Log("Game Over");
-        isGameOver = true;
+        GameEvents.current.PlayerLose();
+        GameEvents.current.CloseGame();
         DrunkardSpawner drunkardSpawner = FindObjectOfType<DrunkardSpawner>();
         drunkardSpawner.SetGameOver(true);
     }

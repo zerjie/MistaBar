@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class PickDrunkController : MonoBehaviour
 {
+    int pointCount;
     public void RightObjectClicked()
     {
-        GameEvents.current.PlayerWin();
-        GameEvents.current.CloseGame();
+        pointCount++;
+        
+        if(pointCount == 2)
+        {
+            GameEvents.current.PlayerWin();
+            GameEvents.current.CloseGame();
+        }
+
         //remove timer
     }
 }

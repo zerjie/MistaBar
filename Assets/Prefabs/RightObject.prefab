@@ -131,10 +131,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 0.26173276}
-      - {x: -0.4704407, y: 0.016779728}
-      - {x: -0.010392278, y: -0.26734057}
-      - {x: 0.5063586, y: 0.001368016}
+    - - {x: -0.13030052, y: 0.9941117}
+      - {x: -1.0051222, y: 0.71770686}
+      - {x: -0.86857855, y: -1.4445385}
+      - {x: 0.8852265, y: -1.419119}
+      - {x: 1.2926552, y: 0.58996713}
   m_UseDelaunayMesh: 0
 --- !u!114 &5107094137345448563
 MonoBehaviour:
@@ -177,4 +178,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43b5bd4eadabef94d80564c49f99e714, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: b281b91a70a624a0da1c43adc1c30c7b, type: 3}
+  newSprite: {fileID: 0}

@@ -16,6 +16,9 @@ public class PickIngredientController : MonoBehaviour
     int correctSpawnIndex;
     public int pointCount;
     public int rightObjects;
+    public GameObject placedObject1;
+    public GameObject placedObject2;
+    public GameObject placedObject3;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +39,18 @@ public class PickIngredientController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(pointCount ==1)
+        {
+            placedObject1.SetActive(true);
+        }
+        if (pointCount == 2)
+        {
+            placedObject2.SetActive(true);
+        }
+        if (pointCount == 3)
+        {
+            placedObject3.SetActive(true);
+        }
         if (pointCount == rightObjects && rightObjects != 0)
         {
             GameEvents.current.PlayerWin();
