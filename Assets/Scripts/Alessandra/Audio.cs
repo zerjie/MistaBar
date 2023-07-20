@@ -6,22 +6,33 @@ public class Audio : MonoBehaviour
 {
 
     [Header("Shake Audio")]
+    public AudioClip[] shakeSounds;
     public AudioSource shake;
-    public AudioClip shakeClip;
 
     [Header("Muddler Audio")]
+    public AudioClip[] muddleSounds;
     public AudioSource muddle;
-    public AudioClip muddleClip;
 
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
-        /* if method is invoked in shaking script
-         *      shake.PlayOneShot(shakeClip);
-         */
+        shake = GetComponent<AudioSource>();
+    }
 
-        /* if method is invoked in muddling script
-         *      muddle.PlayOneShot(muddleClip);
-         */
+    public void PlayRandomShake()
+    {
+        shake.clip = shakeSounds[Random.Range(0, shakeSounds.Length)];
+        shake.PlayOneShot(shake.clip);
+
+        Debug.Log("Shake audio is playing");
+    }
+
+    public void PlayRandomMuddle()
+    {
+        muddle.clip = muddleSounds[Random.Range(0, muddleSounds.Length)];
+        muddle.PlayOneShot(muddle.clip);
+
+        Debug.Log("Muddle audio is playing");
     }
 }
+
+

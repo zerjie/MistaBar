@@ -19,10 +19,11 @@ public class ShakingMicrogameScript : MonoBehaviour
     [Header("Shaking")]
     public float mashDelay = 0.5f;
     public GameObject shaker;
+    public Audio shakeAudio;
 
     private float mash; 
     bool pressed;
-    float shakesToWin = 30;
+    float shakesToWin = 50;
 
     bool callOnce;
 
@@ -72,14 +73,19 @@ public class ShakingMicrogameScript : MonoBehaviour
 
                 if (counter % 2 == 0)
                 {
-                    shaker.transform.position = new Vector3(-1.32f, -0.8f, 0.0f);
+                    ShakeLeft();
                 }
 
                 else
                 {
-                    shaker.transform.position = new Vector3(1.5f, 1.3f, 1.0f);
+                    ShakeRight();
                 }
+
+                // Play shake audio
+                shakeAudio.PlayRandomShake();
             }
+
+
 
             if (counter >= shakesToWin)
             {
@@ -132,5 +138,17 @@ public class ShakingMicrogameScript : MonoBehaviour
         // Insert negative game end here to return to UI and Game Manager
         */
         GameEvents.current.CloseGame();
+    }
+
+    public void ShakeLeft()
+    {
+        shaker.transform.position = new Vector3(-1.32f, -0.8f, 0.0f);
+        
+    }
+
+    public void ShakeRight()
+    {
+        shaker.transform.position = new Vector3(1.5f, 1.3f, 1.0f);
+
     }
 }
