@@ -9,23 +9,14 @@ public class ShakingMicrogameScript : MonoBehaviour
     public Text counterText;
     public int counter;
 
-    //public float timer;
-    //private float _timer;
-    //public GameObject timerbar;
-    //private float scalextb;
-
-    //[SerializeField] Text counterUI;
-
     [Header("Shaking")]
     public float mashDelay = 0.5f;
     public GameObject shaker;
-    public Audio shakeAudio;
+    public Audio audioManager;
 
     private float mash; 
     bool pressed;
     float shakesToWin = 50;
-
-    bool callOnce;
 
     // Start is called before the first frame update
     void Start()
@@ -50,69 +41,49 @@ public class ShakingMicrogameScript : MonoBehaviour
 
     public void GameStart()
     {
-        if (!callOnce)
+        mash -= Time.deltaTime;
+
+        if (Input.GetKeyDown(KeyCode.Space) && !pressed)
         {
-            //timerbar.transform.localScale = new Vector2(scalextb * (_timer / timer), timerbar.transform.localScale.y);
-            mash -= Time.deltaTime;
-            //_timer -= Time.deltaTime;
+            pressed = true;
+            mash = mashDelay;
 
-            if (Input.GetKeyDown(KeyCode.Space) && !pressed)
+        }
+
+        else if (Input.GetKeyUp(KeyCode.Space))
+        {
+            pressed = false;
+            counter++;
+
+            // Change later depending on UI
+            instruction.SetActive(false);
+
+            if (counter % 2 == 0)
             {
-                pressed = true;
-                mash = mashDelay;
-
-            }
-
-            else if (Input.GetKeyUp(KeyCode.Space))
-            {
-                pressed = false;
-                counter++;
-
-                // Change later depending on UI
-                instruction.SetActive(false);
-
-                if (counter % 2 == 0)
-                {
-                    ShakeLeft();
-                }
-
-                else
-                {
-                    ShakeRight();
-                }
-
-                // Play shake audio
-                shakeAudio.PlayRandomShake();
-            }
-
-
-
-            if (counter >= shakesToWin)
-            {
-                WinCondition();
+                ShakeLeft();
             }
 
             else
             {
-                LoseCondition();
+                ShakeRight();
             }
 
-            /*if (_timer <= 0)
-            {
-                if (counter < 30)
-                {
-                    LoseCondition();
-                }
-                else
-                {
-                    WinCondition();
-                }
-
-                _timer = 0;
-                callOnce = true;
-            }
-            */
+            // Play shake audio
+            audioManager.PlayRandomShake();
         }
+
+
+
+        if (counter >= shakesToWin)
+        {
+            WinCondition();
+        }
+
+        else
+        {
+            LoseCondition();
+        }
+
     }
     public void WinCondition()
     {
@@ -149,6 +120,5 @@ public class ShakingMicrogameScript : MonoBehaviour
     public void ShakeRight()
     {
         shaker.transform.position = new Vector3(1.5f, 1.3f, 1.0f);
-
     }
 }

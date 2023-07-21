@@ -12,7 +12,10 @@ public class Muddling : MonoBehaviour
     [Header("Muddling")]
     public float mashDelay = 0.5f;
     public GameObject muddler;
-    public Audio muddleAudio;
+
+    [Header("Sound")]
+    public Audio audioManager;
+    //public AudioClip muddleClip;
 
     private float mash;
     bool pressed;
@@ -36,7 +39,7 @@ public class Muddling : MonoBehaviour
     public void GameStart()
     {
         mash -= Time.deltaTime;
-   
+
         if (Input.GetKeyDown(KeyCode.Space) && !pressed)
         {
             pressed = true;
@@ -48,21 +51,21 @@ public class Muddling : MonoBehaviour
             pressed = false;
             counter++;
 
+            Debug.Log("Key pressed");
+
             // Change later depending on UI
             instruction.SetActive(false);
 
             if (counter % 2 == 0)
             {
                 muddlerDown();
+                muddleSound();
             }
 
             else
             {
                 muddlerUp();
             }
-
-            // Play shake audio
-            muddleAudio.PlayRandomMuddle();
         }
 
         if (counter >= muddlesToWin)
@@ -89,13 +92,18 @@ public class Muddling : MonoBehaviour
 
     public void muddlerDown()
     {
-        muddler.transform.position = new Vector3(-0.15f, -2.09f, 1.0f);
-     
+        muddler.transform.position = new Vector3(-0.15f, -1.70f, 1.0f);
     }
 
     public void muddlerUp()
     {
         muddler.transform.position = new Vector3(-0.13f, 2.93f, 1.0f);
+    }
 
+    private void muddleSound()
+    {
+        //muddleClip.Play();
+        Debug.Log("Other function is called");
+        audioManager.PlayRandomMuddle();
     }
 }

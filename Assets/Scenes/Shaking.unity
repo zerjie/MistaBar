@@ -172,7 +172,7 @@ MonoBehaviour:
   counter: 0
   mashDelay: 0.5
   shaker: {fileID: 1001429773}
-  audio: {fileID: 459948886}
+  audioManager: {fileID: 459948886}
 --- !u!1 &459948885
 GameObject:
   m_ObjectHideFlags: 0
