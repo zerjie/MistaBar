@@ -88,4 +88,13 @@ public class GameEvents : MonoBehaviour
         }
     }
 
+    public event Action OnPlaySirens;
+    public void PlaySirens()
+    {
+        if (OnPlaySirens != null)
+        {
+            OnPlaySirens();
+        }
+    }
+
 }

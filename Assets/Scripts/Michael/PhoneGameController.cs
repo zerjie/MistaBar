@@ -8,15 +8,16 @@ public class PhoneGameController : MonoBehaviour
 {
 
     [SerializeField] TMP_Text numberDislay;
-    [SerializeField] TMP_Text commandText;
     string enteredNumbers;
-
+    public AudioClip buttonPress;
+    public AudioClip sirens;
+    private AudioSource audioSource;
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -28,6 +29,8 @@ public class PhoneGameController : MonoBehaviour
             Debug.Log("Help arriving!");
             GameEvents.current.PlayerWin();
             GameEvents.current.CloseGame();
+            GameEvents.current.PlaySirens();
+            audioSource.PlayOneShot(sirens);
             Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
         }
 
@@ -39,12 +42,14 @@ public class PhoneGameController : MonoBehaviour
     public void Add1()
     {
         enteredNumbers += "1";
+        audioSource.PlayOneShot(buttonPress);
     }
 
     public void Add2()
     {
         enteredNumbers += "2";
         PlayerLose();
+        audioSource.PlayOneShot(buttonPress);
         Debug.Log("Wrong Number!");
     }
 
@@ -52,6 +57,7 @@ public class PhoneGameController : MonoBehaviour
     {
         enteredNumbers += "3";
         PlayerLose();
+        audioSource.PlayOneShot(buttonPress);
         Debug.Log("Wrong Number!");
     }
 
@@ -59,6 +65,7 @@ public class PhoneGameController : MonoBehaviour
     {
         enteredNumbers += "4";
         PlayerLose();
+        audioSource.PlayOneShot(buttonPress);
         Debug.Log("Wrong Number!");
     }
 
@@ -66,6 +73,7 @@ public class PhoneGameController : MonoBehaviour
     {
         enteredNumbers += "5";
         PlayerLose();
+        audioSource.PlayOneShot(buttonPress);
         Debug.Log("Wrong Number!");
     }
 
@@ -73,6 +81,7 @@ public class PhoneGameController : MonoBehaviour
     {
         enteredNumbers += "6";
         PlayerLose();
+        audioSource.PlayOneShot(buttonPress);
         Debug.Log("Wrong Number!");
     }
 
@@ -80,6 +89,7 @@ public class PhoneGameController : MonoBehaviour
     {
         enteredNumbers += "7";
         PlayerLose();
+        audioSource.PlayOneShot(buttonPress);
         Debug.Log("Wrong Number!");
     }
 
@@ -87,12 +97,14 @@ public class PhoneGameController : MonoBehaviour
     {
         enteredNumbers += "8";
         PlayerLose();
+        audioSource.PlayOneShot(buttonPress);
         Debug.Log("Wrong Number!");
     }
     public void Add9()
     {
         enteredNumbers += "9";
-        
+        audioSource.PlayOneShot(buttonPress);
+
     }
 
     private void PlayerLose()

@@ -18,6 +18,10 @@ public class EventManager : MonoBehaviour
     public float timeForMessage = 2f;
     public float timeFromEnd;
     bool gameOver = false;
+    public AudioClip winSound;
+    public AudioClip loseSound;
+    public AudioClip sirens;
+    private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +34,9 @@ public class EventManager : MonoBehaviour
         GameEvents.current.OnTransition += OnTransition;
         GameEvents.current.OnGameOver += OnGameOver;
         GameEvents.current.OnFinishGame += OnFinishGame;
+        GameEvents.current.OnPlaySirens += PlaySirens;
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnPlayerWin()
@@ -41,6 +48,7 @@ public class EventManager : MonoBehaviour
         instruction1.SetActive(true);
         instruction1text.GetComponent<TMP_Text>().text = "SUCCESS!";
         timer.GetComponent<Timer>().HappyManager();
+        audioSource.PlayOneShot(winSound);
         timeFromEnd += Time.deltaTime;
         if (timeFromEnd >= timeForMessage)
         {
@@ -57,6 +65,7 @@ public class EventManager : MonoBehaviour
         instruction1.SetActive(true);
         instruction1text.GetComponent<TMP_Text>().text = "FAILURE!";
         lifeManager.LoseLife();
+        audioSource.PlayOneShot(loseSound);
         timeFromEnd += Time.deltaTime;
         if (timeFromEnd >= timeForMessage)
         {
@@ -73,6 +82,7 @@ public class EventManager : MonoBehaviour
         instruction1text.GetComponent<TMP_Text>().text = "FAILURE!";
         Debug.Log("Time ran out!");
         lifeManager.LoseLife();
+        audioSource.PlayOneShot(loseSound);
         timeFromEnd += Time.deltaTime;
         if (timeFromEnd >= timeForMessage)
         {
@@ -128,5 +138,10 @@ public class EventManager : MonoBehaviour
             instruction1text.GetComponent<TMP_Text>().text = "JOB DONE!";
             gameOver = true;
         }
+    }
+
+    private void PlaySirens()
+    {
+        audioSource.PlayOneShot(sirens);
     }
 }
