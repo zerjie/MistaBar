@@ -5,7 +5,7 @@ public class ShakingMicrogameScript : MonoBehaviour
 {
     // Change depending on UI Manager
     [Header("UI")]
-    public GameObject instruction;
+    //public GameObject instruction;
     public Text counterText;
     public int counter;
 
@@ -29,7 +29,7 @@ public class ShakingMicrogameScript : MonoBehaviour
         //Countdown();
 
         // Change later depending on UI
-        instruction.SetActive(true);
+        //instruction.SetActive(true);
     }
 
     void Update()
@@ -56,7 +56,7 @@ public class ShakingMicrogameScript : MonoBehaviour
             counter++;
 
             // Change later depending on UI
-            instruction.SetActive(false);
+            //instruction.SetActive(false);
 
             if (counter % 2 == 0)
             {
@@ -77,11 +77,6 @@ public class ShakingMicrogameScript : MonoBehaviour
         if (counter >= shakesToWin)
         {
             WinCondition();
-        }
-
-        else
-        {
-            LoseCondition();
         }
 
     }

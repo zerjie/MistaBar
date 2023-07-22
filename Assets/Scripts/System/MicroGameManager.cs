@@ -104,6 +104,12 @@ public class MicroGameManager : MonoBehaviour
                 selectedMicroGame = 8;
                 break;
 
+            case 9:
+                instruction2.SetActive(true);
+                instruction2text.GetComponent<TMP_Text>().text = "MUDDLE!";
+                SceneManager.LoadScene(9, LoadSceneMode.Additive);
+                selectedMicroGame = 9;
+                break;
 
             // Add more cases for other mini-games
 

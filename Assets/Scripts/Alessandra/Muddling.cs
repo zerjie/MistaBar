@@ -72,11 +72,6 @@ public class Muddling : MonoBehaviour
         {
             WinCondition();
         }
-
-        else
-        {
-            LoseCondition();
-        }
     }
     public void WinCondition()
     {
