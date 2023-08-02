@@ -6,6 +6,7 @@ TagManager:
   tags:
   - RightObject
   - Obstacle
+  - CorrectPosition
   layers:
   - Default
   - TransparentFX
