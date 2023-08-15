@@ -13,8 +13,8 @@ public class Muddling : MonoBehaviour
     public float mashDelay = 0.5f;
     public GameObject muddler;
 
-    [Header("Sound")]
-    public Audio audioManager;
+    //[Header("Sound")]
+    //public Audio audioManager;
     //public AudioClip muddleClip;
 
     private float mash;
@@ -99,6 +99,7 @@ public class Muddling : MonoBehaviour
     {
         //muddleClip.Play();
         Debug.Log("Other function is called");
-        audioManager.PlayRandomMuddle();
+        //audioManager.PlayRandomMuddle();
+        AudioEvents.currentAudio.MuddleSound();
     }
 }

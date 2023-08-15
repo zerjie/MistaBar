@@ -12,7 +12,7 @@ public class ShakingMicrogameScript : MonoBehaviour
     [Header("Shaking")]
     public float mashDelay = 0.5f;
     public GameObject shaker;
-    public Audio audioManager;
+   // public Audio audioManager;
 
     private float mash; 
     bool pressed;
@@ -69,7 +69,8 @@ public class ShakingMicrogameScript : MonoBehaviour
             }
 
             // Play shake audio
-            audioManager.PlayRandomShake();
+            //audioManager.PlayRandomShake();
+            AudioEvents.currentAudio.ShakeSound();
         }
 
 

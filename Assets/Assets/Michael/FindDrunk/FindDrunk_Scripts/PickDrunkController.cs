@@ -8,8 +8,9 @@ public class PickDrunkController : MonoBehaviour
     public void RightObjectClicked()
     {
         pointCount++;
-        
-        if(pointCount == 2)
+        AudioEvents.currentAudio.WinSound();
+
+        if (pointCount == 2)
         {
             GameEvents.current.PlayerWin();
             GameEvents.current.CloseGame();

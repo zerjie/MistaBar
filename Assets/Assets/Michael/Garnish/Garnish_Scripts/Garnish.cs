@@ -8,12 +8,9 @@ public class Garnish : MonoBehaviour
     public Sprite[] newSprites;
     private bool beenClicked = false;
     private SpriteRenderer spriteRenderer;
-    public AudioClip correctSound;
-    private AudioSource audioSource;
     private void Awake()
     {
         spriteRenderer = garnish.GetComponent<SpriteRenderer>();
-        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnMouseDown()
@@ -21,7 +18,7 @@ public class Garnish : MonoBehaviour
         if (!beenClicked)
         {
             spriteRenderer.sprite = newSprites[Random.Range(0, 3)];
-            audioSource.PlayOneShot(correctSound);
+            AudioEvents.currentAudio.WinSound();
         }
         beenClicked = true;
     }

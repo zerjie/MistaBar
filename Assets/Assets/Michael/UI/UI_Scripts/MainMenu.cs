@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public AudioSource bgm;
 
     private void Start()
     {
@@ -13,11 +12,7 @@ public class MainMenu : MonoBehaviour
         //bgm = GameObject.Find("AudioObject").GetComponent<AudioSource>();
 
         // Check if the AudioSource and AudioClip are set
-        if (bgm != null && bgm.clip != null)
-        {
-            // Play the audio clip in a loop
-            bgm.Play();
-        }
+
     }
 
     public void StartGame()

@@ -185,7 +185,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abb1f4b95b3d7a940891da679effd1bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgm: {fileID: 1593842021}
 --- !u!4 &561251928
 Transform:
   m_ObjectHideFlags: 0
@@ -825,7 +824,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

@@ -20,6 +20,6 @@ public class PickDrunkClick : MonoBehaviour
         {
             controller.RightObjectClicked();
         }
-        beenClicked= true;
+        beenClicked = true;
     }
 }
