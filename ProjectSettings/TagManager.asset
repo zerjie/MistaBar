@@ -4,9 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - RightObject
   - Obstacle
-  - CorrectPosition
+  - RightObject1
+  - CorrectPosition1
+  - RightObject2
+  - CorrectPosition2
   layers:
   - Default
   - TransparentFX
