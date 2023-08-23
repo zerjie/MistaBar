@@ -1,9 +1,10 @@
 using UnityEngine;
 
-public class DraggableObject : MonoBehaviour
+public class CTDraggableObject : MonoBehaviour
 {
     private Vector3 offset;
     private bool isDragging = false;
+
 
     private void OnMouseDown()
     {
@@ -32,7 +33,13 @@ public class DraggableObject : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.CompareTag("CorrectPosition") && isDragging == false)
+        if (this.CompareTag("RightObject1") && other.CompareTag("CorrectPosition1") && isDragging == false)
+        {
+            // Do something when the draggable object enters the trigger area
+            Debug.Log("Draggable object in correct area");
+        }
+
+        if (this.CompareTag("RightObject2") && other.CompareTag("CorrectPosition2") && isDragging == false)
         {
             // Do something when the draggable object enters the trigger area
             Debug.Log("Draggable object in correct area");
