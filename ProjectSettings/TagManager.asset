@@ -7,6 +7,8 @@ TagManager:
   - RightObject
   - Obstacle
   - CorrectPosition
+  - ToiletGame
+  - Frog
   layers:
   - Default
   - TransparentFX

@@ -1,47 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
-public class Toilet : MonoBehaviour
+public class ToiletGame : MonoBehaviour
 {
-    // Change depending on UI Manager
     [Header("UI")]
-    public GameObject instruction;
     public Text counterText;
     public int counter;
 
     [Header("Toilet")]
-    public float mashDelay = 0.5f;
     public GameObject plunger;
-
-    [Header("Frogs")]
-    public GameObject[] Frogs;
 
     [Header("Sound")]
     public Audio audioManager;
 
+    private float mashDelay = 0.5f;
     private float mash;
+    
+    public bool frogsEscape;
+
     bool pressed;
-    float plungesToWin = 60;
+    float plungesToWin = 40;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        mash = mashDelay;
-
-        // Change later depending on UI
-        instruction.SetActive(true);
-    }
-
-    void Update()
-    {
-        counterText.text = counter.ToString() + "/60";
-        GameStart();
-    }
 
     public void GameStart()
     {
+        counterText.text = counter.ToString() + "/40";
+
         mash -= Time.deltaTime;
 
         if (Input.GetKeyDown(KeyCode.Space) && !pressed)
@@ -57,8 +42,6 @@ public class Toilet : MonoBehaviour
 
             Debug.Log("Key pressed");
 
-            // Change later depending on UI
-            instruction.SetActive(false);
 
             if (counter % 2 == 0)
             {
@@ -74,14 +57,16 @@ public class Toilet : MonoBehaviour
 
         if (counter >= plungesToWin)
         {
-            FrogsEscape();
             WinCondition();
         }
     }
     public void WinCondition()
     {
-        GameEvents.current.PlayerWin();
-        GameEvents.current.CloseGame();
+        frogsEscape = true;
+        Debug.Log("Frog called");
+
+        //GameEvents.current.PlayerWin();
+        //GameEvents.current.CloseGame();
     }
 
     public void LoseCondition()
@@ -98,11 +83,6 @@ public class Toilet : MonoBehaviour
     public void plungeUp()
     {
         plunger.transform.position = new Vector3(-0.13f, 2.93f, 1.0f);
-    }
-
-    void FrogsEscape()
-    {
-        //
     }
 
     private void plungeSound()
