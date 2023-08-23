@@ -20,12 +20,12 @@ public class ToiletGame : MonoBehaviour
     public bool frogsEscape;
 
     bool pressed;
-    float plungesToWin = 40;
+    float plungesToWin = 70;
 
 
     public void GameStart()
     {
-        counterText.text = counter.ToString() + "/40";
+        counterText.text = counter.ToString() + "/70";
 
         mash -= Time.deltaTime;
 
@@ -77,12 +77,12 @@ public class ToiletGame : MonoBehaviour
 
     public void plungeDown()
     {
-        plunger.transform.position = new Vector3(-0.15f, -1.70f, 1.0f);
+        plunger.transform.position = new Vector3(0.392f, -1.111f, 1.0f);
     }
 
     public void plungeUp()
     {
-        plunger.transform.position = new Vector3(-0.13f, 2.93f, 1.0f);
+        plunger.transform.position = new Vector3(0.52f, 1.59f, 1.0f);
     }
 
     private void plungeSound()
