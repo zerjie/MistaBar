@@ -36,6 +36,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Muddle.unity
     guid: 43fe8db16e409bd419087ce0b90b6791
   - enabled: 1
+    path: Assets/Scenes/Toilet.unity
+    guid: 2579350da985b02489f3dbba4c5ad4aa
+  - enabled: 1
     path: Assets/Scenes/EndScreen.unity
     guid: 959c2c580297f454d824b3b8a1c16180
   m_configObjects: {}

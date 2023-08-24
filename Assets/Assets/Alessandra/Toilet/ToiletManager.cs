@@ -1,13 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Presets;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Toilet : MonoBehaviour
 {
     ToiletGame game;
-
 
     private GameObject[] frogObjects;
 

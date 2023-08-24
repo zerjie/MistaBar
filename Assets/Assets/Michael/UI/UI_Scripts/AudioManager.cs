@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip clickSound;
     public AudioClip[] muddleSounds;
     public AudioClip[] shakeSounds;
+    public AudioClip[] plungerSounds;
     public AudioClip sirens;
     public AudioSource bgmSource;
     public AudioSource audioSource;
@@ -25,7 +26,9 @@ public class AudioManager : MonoBehaviour
             AudioEvents.currentAudio.OnClickSound += OnClickSound;
             AudioEvents.currentAudio.OnMuddleSound += OnMuddleSound;
             AudioEvents.currentAudio.OnShakeSound += OnShakeSound;
+            AudioEvents.currentAudio.OnPlungeSound += OnPlungeSound;
             AudioEvents.currentAudio.OnPlaySirens += OnPlaySirens;
+
         }
         else
         {
@@ -72,6 +75,11 @@ public class AudioManager : MonoBehaviour
     public void OnShakeSound()
     {
         audioSource.clip = shakeSounds[Random.Range(0, shakeSounds.Length)];
+        audioSource.PlayOneShot(audioSource.clip);
+    }
+    private void OnPlungeSound()
+    {
+        audioSource.clip = plungerSounds[Random.Range(0, plungerSounds.Length)];
         audioSource.PlayOneShot(audioSource.clip);
     }
 

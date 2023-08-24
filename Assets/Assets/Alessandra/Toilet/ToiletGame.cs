@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 public class ToiletGame : MonoBehaviour
 {
@@ -11,21 +10,18 @@ public class ToiletGame : MonoBehaviour
     [Header("Toilet")]
     public GameObject plunger;
 
-    [Header("Sound")]
-    public Audio audioManager;
-
     private float mashDelay = 0.5f;
     private float mash;
     
     public bool frogsEscape;
 
     bool pressed;
-    float plungesToWin = 70;
+    float plungesToWin = 55;
 
 
     public void GameStart()
     {
-        counterText.text = counter.ToString() + "/70";
+        counterText.text = counter.ToString() + "/55";
 
         mash -= Time.deltaTime;
 
@@ -89,5 +85,7 @@ public class ToiletGame : MonoBehaviour
     {
         Debug.Log("Other function is called");
         //audioManager.PlayRandomPlunge();
+
+        AudioEvents.currentAudio.PlungeSound();
     }
 }

@@ -29,7 +29,7 @@ public class MainMenu : MonoBehaviour
 
     public void EndGame()
     {
-        SceneManager.UnloadSceneAsync(10);
+        SceneManager.UnloadSceneAsync(11);
         SceneManager.LoadScene(0);
     }
 

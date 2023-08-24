@@ -97,9 +97,7 @@ public class Muddling : MonoBehaviour
 
     private void muddleSound()
     {
-        //muddleClip.Play();
         Debug.Log("Other function is called");
-        //audioManager.PlayRandomMuddle();
         AudioEvents.currentAudio.MuddleSound();
     }
 }

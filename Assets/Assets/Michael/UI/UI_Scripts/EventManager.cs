@@ -19,6 +19,7 @@ public class EventManager : MonoBehaviour
     public float timeFromEnd;
     bool gameOver = false;
 
+    public float transitionDelay = 3;
 
     // Start is called before the first frame update
     void Start()
@@ -99,6 +100,7 @@ public class EventManager : MonoBehaviour
     {
         if (closedGame == false)
         {
+            StartCoroutine(TestRoutine(transitionDelay));
             SceneManager.UnloadSceneAsync(microGameManager.selectedMicroGame);
             microGameManager.microGameList.Remove(microGameManager.selectedMicroGame);
             Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
@@ -108,6 +110,11 @@ public class EventManager : MonoBehaviour
         }
     }
 
+    IEnumerator TestRoutine(float transitionDelay)
+    {
+        // Delay from switching to new scene by transition delay time
+        yield return new WaitForSeconds(transitionDelay);
+    }
     private void OnTransition()
     {
         SceneManager.LoadScene(2, LoadSceneMode.Additive);
@@ -128,7 +135,7 @@ public class EventManager : MonoBehaviour
     {
         if (!gameOver)
         {
-            SceneManager.LoadScene(10, LoadSceneMode.Additive);
+            SceneManager.LoadScene(11, LoadSceneMode.Additive);
             instruction1.SetActive(true);
             instruction1text.GetComponent<TMP_Text>().text = "JOB DONE!";
             gameOver = true;
