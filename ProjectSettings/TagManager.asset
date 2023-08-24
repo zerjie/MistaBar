@@ -9,6 +9,8 @@ TagManager:
   - CorrectPosition1
   - RightObject2
   - CorrectPosition2
+  - ToiletGame
+  - Frog
   layers:
   - Default
   - TransparentFX

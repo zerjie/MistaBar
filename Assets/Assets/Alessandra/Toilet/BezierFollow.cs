@@ -12,7 +12,8 @@ public class BezierFollow : MonoBehaviour
     private int nextRoute;
     private float tParam;
     private Vector2 frogPos;
-    private bool coroutineAllowed;
+    
+    public bool coroutineAllowed;
 
     void Start()
     {
@@ -20,6 +21,8 @@ public class BezierFollow : MonoBehaviour
         tParam = 0;
         coroutineAllowed = true;
     }
+    
+    // Have Game Script declare couroutineAllowed = true in a method
 
     void Update()
     {
