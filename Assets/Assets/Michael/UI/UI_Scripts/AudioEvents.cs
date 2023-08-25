@@ -68,6 +68,16 @@ public class AudioEvents : MonoBehaviour
             OnShakeSound();
         }
     }
+
+    public event Action OnPlungeSound;
+    public void PlungeSound()
+    {
+        if (OnPlungeSound != null)
+        {
+            OnPlungeSound();
+        }
+    }
+
     public event Action OnPlaySirens;
     public void PlaySirens()
     {

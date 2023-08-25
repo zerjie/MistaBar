@@ -1714,6 +1714,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6bbc82c863e9e0c4989d6e6bb7b672db, type: 3}
   - {fileID: 8300000, guid: b068dbb197ab8d041904f5fa08d9b247, type: 3}
   - {fileID: 8300000, guid: e09c67fd1abea1a4ca067e69ee80b592, type: 3}
+  plungerSounds:
+  - {fileID: 8300000, guid: 5c47384532cccf741beab1668497f2fd, type: 3}
+  - {fileID: 8300000, guid: 3595e89387585b44580ea1ecbc67adc5, type: 3}
+  - {fileID: 8300000, guid: b3762ce04f4d7d547bc70100dc6964d3, type: 3}
   sirens: {fileID: 8300000, guid: bb8696afaa9cb2d4c8085ba7060ac2a4, type: 3}
   bgmSource: {fileID: 1362493715}
   audioSource: {fileID: 1362493717}
@@ -2150,7 +2154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb91da3060d24874c9f71dfc2b9bc3ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  microGameList: 03000000040000000500000006000000070000000800000009000000
+  microGameList: 030000000400000005000000060000000700000008000000090000000a000000
   selectedIndex: 0
   selectedMicroGame: 0
   instruction1: {fileID: 1045266034}

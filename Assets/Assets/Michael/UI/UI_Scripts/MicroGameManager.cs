@@ -111,6 +111,13 @@ public class MicroGameManager : MonoBehaviour
                 selectedMicroGame = 9;
                 break;
 
+            case 10:
+                instruction2.SetActive(true);
+                instruction2text.GetComponent<TMP_Text>().text = "PLUNGE!";
+                SceneManager.LoadScene(10, LoadSceneMode.Additive);
+                selectedMicroGame = 10;
+                break;
+
             // Add more cases for other mini-games
 
             default:
