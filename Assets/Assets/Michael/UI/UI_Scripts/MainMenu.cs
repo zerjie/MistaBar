@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-
+    public GameObject settingsPanel;
     private void Start()
     {
         // Get the AudioSource component attached to the "AudioObject" GameObject
@@ -29,8 +29,18 @@ public class MainMenu : MonoBehaviour
 
     public void EndGame()
     {
-        SceneManager.UnloadSceneAsync(11);
+        SceneManager.UnloadSceneAsync(14);
         SceneManager.LoadScene(0);
+    }
+
+    public void OpenSettings()
+    {
+        settingsPanel.SetActive(true);
+    }
+
+    public void CloseSettings()
+    {
+        settingsPanel.SetActive(false);
     }
 
 }

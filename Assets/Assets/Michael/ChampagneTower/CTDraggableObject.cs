@@ -36,6 +36,8 @@ public class CTDraggableObject : MonoBehaviour
         if (this.CompareTag("RightObject1") && other.CompareTag("CorrectPosition1") && isDragging == false)
         {
             // Do something when the draggable object enters the trigger area
+            GameEvents.current.PlayerWin();
+            GameEvents.current.CloseGame();
             Debug.Log("Draggable object in correct area");
         }
 

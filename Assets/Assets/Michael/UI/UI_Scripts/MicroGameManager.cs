@@ -117,6 +117,30 @@ public class MicroGameManager : MonoBehaviour
                 SceneManager.LoadScene(10, LoadSceneMode.Additive);
                 selectedMicroGame = 10;
                 break;
+            case 11:
+                instruction1.SetActive(true);
+                instruction1text.GetComponent<TMP_Text>().text = "THROW!";
+                SceneManager.LoadScene(11, LoadSceneMode.Additive);
+                selectedMicroGame = 11;
+                break;
+            case 12:
+                instruction2.SetActive(true);
+                instruction2text.GetComponent<TMP_Text>().text = "TOP IT!";
+                SceneManager.LoadScene(12, LoadSceneMode.Additive);
+                selectedMicroGame = 12;
+                break;
+            case 13:
+                instruction1.SetActive(true);
+                instruction1text.GetComponent<TMP_Text>().text = "SORT!";
+                SceneManager.LoadScene(13, LoadSceneMode.Additive);
+                selectedMicroGame = 13;
+                break;
+            case 14:
+                instruction1.SetActive(true);
+                instruction1text.GetComponent<TMP_Text>().text = "MEMORIZE!";
+                SceneManager.LoadScene(14, LoadSceneMode.Additive);
+                selectedMicroGame = 14;
+                break;
 
             // Add more cases for other mini-games
 

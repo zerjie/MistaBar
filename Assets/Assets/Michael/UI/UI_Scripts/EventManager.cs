@@ -124,7 +124,7 @@ public class EventManager : MonoBehaviour
     {
         if (!gameOver)
         {
-            SceneManager.LoadScene(2, LoadSceneMode.Additive);
+            SceneManager.LoadScene(15, LoadSceneMode.Additive);
             instruction1.SetActive(true);
             instruction1text.GetComponent<TMP_Text>().text = "GAME OVER!";
             gameOver = true;
@@ -135,7 +135,7 @@ public class EventManager : MonoBehaviour
     {
         if (!gameOver)
         {
-            SceneManager.LoadScene(11, LoadSceneMode.Additive);
+            SceneManager.LoadScene(15, LoadSceneMode.Additive);
             instruction1.SetActive(true);
             instruction1text.GetComponent<TMP_Text>().text = "JOB DONE!";
             gameOver = true;

@@ -14,7 +14,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip[] plungerSounds;
     public AudioClip sirens;
     public AudioSource bgmSource;
-    public AudioSource audioSource;
+    public AudioSource sfxSource;
 
     void Start()
     {
@@ -40,7 +40,7 @@ public class AudioManager : MonoBehaviour
             Debug.LogError("bgmSource is not assigned. Please assign an AudioSource component in the Inspector.");
         }
 
-        if (audioSource == null)
+        if (sfxSource == null)
         {
             Debug.LogError("audioSource is not assigned. Please assign an AudioSource component in the Inspector.");
         }
@@ -53,38 +53,38 @@ public class AudioManager : MonoBehaviour
 
     private void OnWinSound()
     {
-        audioSource.PlayOneShot(winSound);
+        sfxSource.PlayOneShot(winSound);
     }
 
     private void OnLoseSound()
     {
-        audioSource.PlayOneShot(loseSound);
+        sfxSource.PlayOneShot(loseSound);
     }
 
     private void OnClickSound()
     {
-        audioSource.PlayOneShot(clickSound);
+        sfxSource.PlayOneShot(clickSound);
     }
 
     private void OnMuddleSound()
     {
-        audioSource.clip = muddleSounds[Random.Range(0, muddleSounds.Length)];
-        audioSource.PlayOneShot(audioSource.clip);
+        sfxSource.clip = muddleSounds[Random.Range(0, muddleSounds.Length)];
+        sfxSource.PlayOneShot(sfxSource.clip);
     }
 
     public void OnShakeSound()
     {
-        audioSource.clip = shakeSounds[Random.Range(0, shakeSounds.Length)];
-        audioSource.PlayOneShot(audioSource.clip);
+        sfxSource.clip = shakeSounds[Random.Range(0, shakeSounds.Length)];
+        sfxSource.PlayOneShot(sfxSource.clip);
     }
     private void OnPlungeSound()
     {
-        audioSource.clip = plungerSounds[Random.Range(0, plungerSounds.Length)];
-        audioSource.PlayOneShot(audioSource.clip);
+        sfxSource.clip = plungerSounds[Random.Range(0, plungerSounds.Length)];
+        sfxSource.PlayOneShot(sfxSource.clip);
     }
 
     private void OnPlaySirens()
     {
-        audioSource.PlayOneShot(sirens);
+        sfxSource.PlayOneShot(sirens);
     }
 }
