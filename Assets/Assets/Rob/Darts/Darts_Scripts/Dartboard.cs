@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -29,10 +28,14 @@ using UnityEngine;
 //}
 
 public class Dartboard : MonoBehaviour
-
 {
-    public GameObject gameOverScreen;
+    private GameEvents gameEvents;
 
+    private void Start()
+    {
+        // Assign the GameEvents script here
+        gameEvents = FindObjectOfType<GameEvents>();
+    }
 
     private void OnTriggerStay2D(Collider2D other)
     {
@@ -43,22 +46,17 @@ public class Dartboard : MonoBehaviour
             {
                 Debug.Log("Hit the bullseye!");
 
-                // Trigger the game over logic here
-                GameOver();
+                // Trigger the win logic
+                if (gameEvents != null)
+                {
+                    gameEvents.PlayerWin();
+                }
             }
             else
             {
                 Debug.Log("Dart is moving not a bullseye.");
             }
         }
-    }
-
-    void GameOver()
-    {      
-        gameOverScreen.SetActive(true);
-        GameEvents.current.PlayerLose();
-        GameEvents.current.CloseGame();       
-        
     }
 }
 
