@@ -196,6 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b67015baf2b72647bc2782d168726fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverScreen: {fileID: 1538605079}
 --- !u!58 &256008420
 CircleCollider2D:
   m_ObjectHideFlags: 0

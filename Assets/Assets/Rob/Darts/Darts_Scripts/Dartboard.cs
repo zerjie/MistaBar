@@ -29,7 +29,11 @@ using UnityEngine;
 //}
 
 public class Dartboard : MonoBehaviour
+
 {
+    public GameObject gameOverScreen;
+
+
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Dart"))
@@ -38,6 +42,9 @@ public class Dartboard : MonoBehaviour
             if (dartMovement != null && !dartMovement.isMoving)
             {
                 Debug.Log("Hit the bullseye!");
+
+                // Trigger the game over logic here
+                GameOver();
             }
             else
             {
@@ -45,6 +52,17 @@ public class Dartboard : MonoBehaviour
             }
         }
     }
+
+    void GameOver()
+    {      
+        gameOverScreen.SetActive(true);
+        GameEvents.current.PlayerLose();
+        GameEvents.current.CloseGame();       
+        
+    }
 }
 
+
+//GameEvents.current.PlayerWin();
+//GameEvents.current.CloseGame();
 
