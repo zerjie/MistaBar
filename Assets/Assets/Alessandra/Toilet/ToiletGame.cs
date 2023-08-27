@@ -61,8 +61,8 @@ public class ToiletGame : MonoBehaviour
         frogsEscape = true;
         Debug.Log("Frog called");
 
-        //GameEvents.current.PlayerWin();
-        //GameEvents.current.CloseGame();
+        GameEvents.current.PlayerWin();
+        GameEvents.current.CloseGame();
     }
 
     public void LoseCondition()

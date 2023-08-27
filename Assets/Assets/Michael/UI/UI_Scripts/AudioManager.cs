@@ -9,6 +9,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip winSound;
     public AudioClip loseSound;
     public AudioClip clickSound;
+    public AudioClip crowd;
     public AudioClip[] muddleSounds;
     public AudioClip[] shakeSounds;
     public AudioClip[] plungerSounds;
@@ -21,6 +22,7 @@ public class AudioManager : MonoBehaviour
         if (AudioEvents.currentAudio != null)
         {
             AudioEvents.currentAudio.OnBGM += OnBGM;
+            AudioEvents.currentAudio.OnCrowd += OnCrowd;
             AudioEvents.currentAudio.OnWinSound += OnWinSound;
             AudioEvents.currentAudio.OnLoseSound += OnLoseSound;
             AudioEvents.currentAudio.OnClickSound += OnClickSound;
@@ -50,6 +52,13 @@ public class AudioManager : MonoBehaviour
     {
             bgmSource.Play();
     }
+
+    private void OnCrowd()
+    {
+        bgmSource.clip = crowd;
+        bgmSource.Play();
+    }
+
 
     private void OnWinSound()
     {

@@ -58,6 +58,7 @@ public class SortDraggableObject : MonoBehaviour
         {
             // Do something when the draggable object enters the trigger area
             sortingController.pointCount++;
+            AudioEvents.currentAudio.WinSound();
             Destroy(gameObject);
             Debug.Log("Draggable object in correct area");
         }
@@ -66,6 +67,7 @@ public class SortDraggableObject : MonoBehaviour
         {
             // Do something when the draggable object enters the trigger area
             sortingController.pointCount++;
+            AudioEvents.currentAudio.WinSound();
             Destroy(gameObject);
             Debug.Log("Draggable object in correct area");
         }

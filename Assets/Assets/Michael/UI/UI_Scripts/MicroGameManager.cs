@@ -11,6 +11,7 @@ public class MicroGameManager : MonoBehaviour
 
     public int selectedIndex;
     public int selectedMicroGame;
+    private bool lastSceneLoaded = false;
     public GameObject instruction1;
     public GameObject instruction2;
     public GameObject instruction3;
@@ -45,7 +46,15 @@ public class MicroGameManager : MonoBehaviour
     {
         if (microGameList.Count == 0)
         {
-            GameEvents.current.FinishGame();
+            if (!lastSceneLoaded)
+            {
+                instruction1.SetActive(true);
+                instruction1text.GetComponent<TMP_Text>().text = "MEMORIZE!";
+                SceneManager.LoadScene(14, LoadSceneMode.Additive);
+                GameEvents.current.OpenLastGame();
+                lastSceneLoaded = true;
+            }
+
         }
     }
     //randomly selects a minigame
@@ -130,18 +139,11 @@ public class MicroGameManager : MonoBehaviour
                 selectedMicroGame = 12;
                 break;
             case 13:
-                instruction1.SetActive(true);
-                instruction1text.GetComponent<TMP_Text>().text = "SORT!";
+                instruction4.SetActive(true);
+                instruction4text.GetComponent<TMP_Text>().text = "SORT!";
                 SceneManager.LoadScene(13, LoadSceneMode.Additive);
                 selectedMicroGame = 13;
                 break;
-            case 14:
-                instruction1.SetActive(true);
-                instruction1text.GetComponent<TMP_Text>().text = "MEMORIZE!";
-                SceneManager.LoadScene(14, LoadSceneMode.Additive);
-                selectedMicroGame = 14;
-                break;
-
             // Add more cases for other mini-games
 
             default:

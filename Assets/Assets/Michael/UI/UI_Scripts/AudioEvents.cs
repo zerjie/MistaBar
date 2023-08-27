@@ -24,6 +24,15 @@ public class AudioEvents : MonoBehaviour
         }
     }
 
+    public event Action OnCrowd;
+    public void CrowdStart()
+    {
+        if (OnCrowd != null)
+        {
+            OnCrowd();
+        }
+    }
+
     public event Action OnWinSound;
     public void WinSound()
     {

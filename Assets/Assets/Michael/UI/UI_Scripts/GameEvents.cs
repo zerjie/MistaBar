@@ -52,6 +52,15 @@ public class GameEvents : MonoBehaviour
         }
     }
 
+    public event Action OnOpenLastGame;
+    public void OpenLastGame()
+    {
+        if (OnOpenLastGame != null)
+        {
+            OnOpenLastGame();
+        }
+    }
+
     public event Action OnCloseGame;
     public void CloseGame()
     {

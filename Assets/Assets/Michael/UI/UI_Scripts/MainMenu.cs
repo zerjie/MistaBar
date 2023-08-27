@@ -18,6 +18,7 @@ public class MainMenu : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene(1);
+        AudioEvents.currentAudio.CrowdStart();
 
     }
 
@@ -29,7 +30,7 @@ public class MainMenu : MonoBehaviour
 
     public void EndGame()
     {
-        SceneManager.UnloadSceneAsync(14);
+        SceneManager.UnloadSceneAsync(15);
         SceneManager.LoadScene(0);
     }
 

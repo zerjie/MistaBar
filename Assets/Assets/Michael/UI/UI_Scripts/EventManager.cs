@@ -15,11 +15,11 @@ public class EventManager : MonoBehaviour
     public GameObject instruction3;
     public GameObject instruction4;
     public GameObject instruction1text;
-    public float timeForMessage = 2f;
+    public float timeForMessage = 1.5f;
     public float timeFromEnd;
     bool gameOver = false;
 
-    public float transitionDelay = 3;
+    public float transitionDelay = 2;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +28,7 @@ public class EventManager : MonoBehaviour
         GameEvents.current.OnPlayerLose += OnPlayerLoss;
         GameEvents.current.OnTimeOut += OnTimeOut;
         GameEvents.current.OnOpenGame += OnOpenGame;
+        GameEvents.current.OnOpenLastGame += OnOpenLastGame;
         GameEvents.current.OnCloseGame += OnCloseGame;
         GameEvents.current.OnTransition += OnTransition;
         GameEvents.current.OnGameOver += OnGameOver;
@@ -49,6 +50,7 @@ public class EventManager : MonoBehaviour
         if (timeFromEnd >= timeForMessage)
         {
             instruction1.SetActive(false);
+
         }
     }
 
@@ -83,6 +85,9 @@ public class EventManager : MonoBehaviour
         if (timeFromEnd >= timeForMessage)
         {
             instruction1.SetActive(false);
+            instruction4.SetActive(false);
+            instruction2.SetActive(false);
+            instruction3.SetActive(false);
         }
 
     }
@@ -94,6 +99,17 @@ public class EventManager : MonoBehaviour
         instruction1.SetActive(false);
         timer.SetActive(true);
         timer.GetComponent<Timer>().timeRemaining = 8f;
+        timer.GetComponent<Timer>().HappyManager();
+    }
+
+    private void OnOpenLastGame()
+    {
+        closedGame = false;
+        timeFromEnd = 0f;
+        instruction1.SetActive(false);
+        SceneManager.UnloadSceneAsync(2);
+        timer.SetActive(true);
+        timer.GetComponent<Timer>().timeRemaining = 60f;
         timer.GetComponent<Timer>().HappyManager();
     }
     private void OnCloseGame()

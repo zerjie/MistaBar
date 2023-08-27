@@ -530,7 +530,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 561251927}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: StartGame
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -927,7 +927,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 561251927}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: StartGame
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1485,8 +1485,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 148.008, y: 54.299973}
-  m_SizeDelta: {x: 152.7911, y: 59.2654}
+  m_AnchoredPosition: {x: 166.72699, y: 54.299973}
+  m_SizeDelta: {x: 115.3531, y: 59.265}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &967904582
 MonoBehaviour:
@@ -1695,8 +1695,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 148.008, y: 121.2}
-  m_SizeDelta: {x: 152.7911, y: 59.2654}
+  m_AnchoredPosition: {x: 164.46423, y: 122.63991}
+  m_SizeDelta: {x: 119.8786, y: 56.3855}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1085493050
 MonoBehaviour:
@@ -2352,7 +2352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.45882356, g: 0.67058825, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2842,7 +2842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.44705886, g: 0.6313726, b: 0.9215687, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3474,6 +3474,7 @@ MonoBehaviour:
   winSound: {fileID: 8300000, guid: 947522c60d4a4ff45803bc57c101f7f5, type: 3}
   loseSound: {fileID: 8300000, guid: 6c8341abf15b42f48977e41d6bc86444, type: 3}
   clickSound: {fileID: 8300000, guid: 2db04b3bbc6dd4942a824d709d82606f, type: 3}
+  crowd: {fileID: 8300000, guid: 91c22c736c4e0154993d150b8c3c7a24, type: 3}
   muddleSounds:
   - {fileID: 8300000, guid: a3840ff993fa631468d2b78e4691b740, type: 3}
   shakeSounds:
